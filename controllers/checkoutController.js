@@ -11,7 +11,7 @@ const controllerCheckout = {
     CHECKOUT4: (req, res) =>{
         res.render('../views/Checkout/checkout4');
     },
-    CHECKOUTSUCESSO: (req, res) =>{
+    SALVARVENDA: (req, res) =>{
         //fazer o redirect
     }
 }
