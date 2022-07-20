@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="./descricao.css">
+    <link rel="stylesheet" href="./descricao/descricao.css">
     <link rel="stylesheet" href="./responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,27 +16,9 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <img src="../images/logo.jpeg" alt="logo">
-                <ul>
-                    <li><a href="#">Pratos</a></li>
-                    <li><a href="#">Xícaras</a></li>
-                    <li><a href="#">Complementos</a></li>
-                    <li><a href="#">Aparelhos de Jantar</a></li>
-                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg></a></li>
-                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg></a></li>
-                </ul>
-        </nav>
-    </header>
+    <!-- Header -->
+	<%- include ('../partials/header')%>
+	<!-- /Header -->
     <main>
 
         <section>
@@ -243,59 +225,10 @@
 
     </main>
     <!-- fim main  -->
-    <footer class="rodape">
-        <div class="footer-container">
-            <div class="footer-box">
-                <img src="../images/logo.jpeg" alt="logo">
-                <div class="company-footer">
-                    <ul class="footer-list">
-                        <li><a href="#">> Sobre Nós</a></li>
-                        <li><a href="#">> FAQ</a></li>
-                        <li><a href="#">> Contato</a></li>
-                        <li><a href="#">> Carreira</a></li>
-                        <li><a href="#">> Politica de Privacidade</a></li>
-                        <li><a href="#">> Mapa do Site</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-box">
-                <div class="footer-payments">
-                    <h2>PAGAMENTO SEGURO</h2>
-                    <ul class="footer-cards">
-                        <li><img src="../images/elo.png" alt="elo"></li>
-                        <li><img src="../images/mastercard.png" alt="mastercard"></li>
-                        <li><img src="../images/visa.png" alt="visa"></li>
-                        <li><img src="../images/pix.png" alt="pix"></li>
-                        <li><img src="../images/boleto.png" alt="boleto"></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-box">
-                <div class="footer-customer">
-                    <h2>ATENDIMENTO AO CLIENTE</h2>
-                    <p>Fale conosco e tire suas dúvidas!</p>
-                    <p>Seg-sex das 9:00 às 18:00h (exceto feriados)</p>
-                    <br>
-                    <p>Telefone: 9999-9999<br>Fale conosco</p>
-                    <ul class="footer-social">
-                        <h2>REDES SOCIAIS</h2>
-                        <div class="icons-social">
-                            <li><img src="../images/facebook.png" alt="facebook"></li>
-                            <li><img src="../images/twitter.png" alt="twitter"></li>
-                            <li><img src="../images/instagram.png" alt="instagram"></li>
-                            <li><img src="../images/pinterest.png" alt="pinterest"></li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <p class="footer-bottom"><br>© 2022 D'house Comércio Varejista S.A<br>
-            CNPJ: 99.999.999/0001-99<br>
-            Endereço: Av. Wireframe DH, 999<br>
-            Bairro Cidade</p>
-
-    </footer>
+    
+    <!-- footer -->
+    <%- include('../partials/footer')%>
+    <!-- /footer --> 
 </body>
 
 </html>
