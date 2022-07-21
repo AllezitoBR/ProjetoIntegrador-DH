@@ -17,9 +17,9 @@ header {
     display: flex;
 }
 
-main {
+main{
     width: 100%;
-    height: 900px;
+    height: 80vh;
 }
 
 .menu-topo {
@@ -27,11 +27,13 @@ main {
 
     height: 60px;
     width: 100%;
+ 
 }
 
 .main-link-voltar {
-    padding-top: 20px;
+    padding-top: 10px;
     margin-left: 10px;
+    padding-bottom: 0px;
 }
 
 .main-link-voltar a {
@@ -57,7 +59,7 @@ main {
     opacity: 10px;
     border-radius: 10px;
     width: 100%;
-    height: 850px;
+    height: 95%;
 }
 
 .main-left {
@@ -203,7 +205,8 @@ main {
 .main-right-topo {
     display: flex;
     justify-content: space-between;
-    height: 30%;
+    height: 35%;
+
 }
 
 .main-right-topoL {
@@ -288,7 +291,7 @@ main {
 .main-right-main-button {
     display: flex;
     align-items: center;
-    height: 110px;
+    height: 70px;
 }
 
 .main-right-main-button>button {
@@ -333,8 +336,11 @@ main {
     text-align: center;
     border-radius: 20px 20px 0 0;
     height: 130px;
-    margin-left: 20px;
+   
     margin-right: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-1 {

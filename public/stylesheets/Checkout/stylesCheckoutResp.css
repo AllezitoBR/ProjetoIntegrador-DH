@@ -19,14 +19,22 @@ header {
 
 main{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
+
 .menu-topo {
     background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);
+
     height: 60px;
     width: 100%;
-  
+   
 }
+.menu-topo img {
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 
 .main-link-voltar {
     padding-top: 10px;
@@ -34,7 +42,7 @@ main{
 }
 
 .main-link-voltar a {
-    padding: 20px;
+    padding-left: 20px;
     font-size: 1.2rem;
     color: black;
 }
@@ -43,12 +51,6 @@ main{
     text-decoration: underline;
 }
 
-.menu-topo img {
-    height: 40px;
-    margin-top: 10px;
-    margin-left: 20px;
-
-}
 
 .main-container {
     display: flex;
@@ -68,12 +70,10 @@ main{
 }
 
 .main-p-1 {
-
+    margin-bottom: 20px;
     font-size: 1.7rem;
     font-weight: 530;
-
 }
-
 
 .main-p-2 {
     font-weight: 600;
@@ -82,45 +82,113 @@ main{
 
 .main-left1 {
     display: flex;
-    align-items: baseline;
     width: 800px;
-    height: 95px;
-    background-color: white;
-    border-radius: 20px ;
-
-    margin-top: 1%;
-    margin-bottom: 1%;
+    height: 130px;
+    background-color: rgba(248, 248, 248, 1);
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
 .main-left1-img {
-
+    padding-top: 10px;
     width: 110px;
-    /* padding-right: 20px; */
-    /* padding-left: 20px; */
-    padding: 20px;
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.busula {
+    width: 36px;
+    position: absolute;
+    margin-left: 42px;
+    margin-top: 30px;
+    padding-right: 10px;
 }
 
 .main-left1-endereco {
     margin-top: 20px;
-    width: 90%;
+    width: 400px;
     font-size: 1rem;
-    /* margin-left: 30px;*/
+    margin-left: 30px;
 }
 
 .main-left1-entrega {
-    padding: 30px;
-    
+    padding: 40px;
+    width: 300px;
 }
-.main-left-p-verde{
-    color: rgba(16, 158, 22, 1);
+
+.main-left1-entrega h2 a {
+    color: rgba(255, 128, 56, 1);
+}
+
+.main-left1-entrega h2 a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+.main-left2 {
+    width: 800px;
+    height: 100px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+
+.main-left2-1 {
+    width: 500px;
     font-size: 1rem;
-    font-weight: 400;
+    height: 35%;
+    margin-top: 3px;
+}
+
+.main-left2-2 {
+    margin-top: 5px;
+    width: 400px;
+    font-size: 1.2rem;
+    font-weight: 800px;
+    height: 40%;
+    color: rgba(16, 158, 22, 1);
+}
+
+.main-left2-2 a {
+    position: relative;
+    right: -745px;
+    top: -36px;
 }
 
 /*final do left 2 */
+.main-left3 {
+    width: 800px;
+    height: 100px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
 
+.main-left3-1 {
+    width: 500px;
+    font-size: 1rem;
+    height: 35%;
+}
 
+.main-left3-2 {
+    margin-top: 3px;
+    width: 300px;
+    font-size: 1.1rem;
+    font-weight: 800px;
+    height: 40%;
+    color: rgba(255, 128, 56, 1);
+}
 
+.main-left3-2 a {
+    right: -745px;
+    top: -31px;
+    position: relative;
+}
 
 /*final do left 3*/
 
@@ -129,7 +197,7 @@ main{
     width: 570px;
     border: 2px rgb(209, 208, 208) solid;
     background-color: white;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 10px 10px 0;
     height: 100%;
     padding-top: 20px;
 }
@@ -137,7 +205,7 @@ main{
 .main-right-topo {
     display: flex;
     justify-content: space-between;
-    height: 30%;
+    height: 35%;
 }
 
 .main-right-topoL {
@@ -163,6 +231,9 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
+/*.main-right-topoC img{
+    width: 100%;
+}*/
 .main-right-topoR {
     display: flex;
     width: 25%;
@@ -242,3 +313,4 @@ main{
 .footer-2 {
     padding-top: 10px;
 }
+

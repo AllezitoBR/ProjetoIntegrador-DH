@@ -19,7 +19,7 @@ header {
 
 main{
     width: 100%;
-    height: 900px;
+    height: 85vh;
 }
 
 .menu-topo {
@@ -30,7 +30,8 @@ main{
 }
 
 .main-link-voltar {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 
 .main-link-voltar a {
@@ -51,12 +52,12 @@ main{
 
 .main-container {
     display: flex;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
     opacity: 10px;
     border-radius: 10px;
     width: 100%;
-    height: 850px;
+    height: 95%;
 }
 
 .main-left {
@@ -147,7 +148,7 @@ main{
 .main-right-topo {
     display: flex;
     justify-content: space-between;
-    height: 30%;
+    height: 35%;
 }
 
 .main-right-topoL {
@@ -239,9 +240,10 @@ main{
     background-color: rgba(217, 217, 217, 1);
     text-align: center;
     border-radius: 20px 20px 0 0;
-    height: 130px;
-    margin-left: 20px;
+    height: 100px;
     margin-right: 20px;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-1 {
