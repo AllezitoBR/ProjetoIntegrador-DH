@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./stylecadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myApp/public/stylesheets/cadastro.css">
+    <title>Cadastro</title>
+</head>  
+
+<body>
+ <%-include('./partials/header')%>     
+    <main>
+        <div class="divPai">
+            <div class="caixaCriarConta">
+                <strong><h2>Criar Conta</h2></strong>
+                <form class="form" action="/cadastro.html/" method="post">
+                    <label for="nome">Nome</label>
+                    
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+                    
+                    <label for="sobrenome">Sobrenome</label>
+                    
+                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                    
+                    <label for="email">E-mail</label>
+                    
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                </form>
+                <div class="caixaform2">
+                    <form action="">                            <label  for="nascimento">Data de <br> Nascimento</label>
+                        <br>
+                        <input type="date" name="nascimento" id="nascimento" required>
+                    </form>
+                    <form action="">
+                        <label for="telefone">Telefone/ <br> Celular</label>
+                        <br>
+                        <input  type="tel" name="telefone" id="telefone" placeholder="Digite seu numero" required>
+                    </form>
+                </div>
+                <div class="caixaform3">
+                    <form action="">                             <label  for="cpf">CPF</label>
+                        <br>
+                        <input class="inputCpf" type="text" name="cpf" id="cpf" placeholder ="000.000.000-00"required>
+                    </form>
+                    <form action="">
+                        <label for="password">Senha</label>
+                        <br>
+                        <input  type="password" name="senha" id="senha" placeholder="******" required>
+                    </form>
+                                           
+                   
+                </div>
+                <div>
+                    <input  class ="checkbox" type="checkbox" name="termos">
+                    <label  class="termos" for="termos">Declaro que li e aceito os termos e condições de uso</label>                           
+
+                </div>                    
+                    
+                </form>
+                <form action="">
+                    <button type="submit"> Criar Conta</button>
+                </form>
+            </div>
+        </div>
+    </main>
+        
+    </section>
+<%-include('./partials/footer')%>
+    </section>     
+    
+</body>
+</html>

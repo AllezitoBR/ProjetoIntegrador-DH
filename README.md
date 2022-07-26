@@ -1,7 +1,7 @@
  <h1 align="center"> Projeto Integrador - DIGITAL HOUSE</h1>
  <br>
  <p align="center">
-<img align="center" src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/logo.jpeg" style="width: 25%;" alt="Logo da D'House">
+<img align="center" src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/logo.jpeg" style="width: 25%;" alt="Logo da D'House">
 </p>
 
 <br>
@@ -53,9 +53,9 @@
      <td>Descrição de Produto</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/Home.png" style="width: 80% alt="Home"></td>
-     <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/produto.png" style="width: 80%;" alt="Produtos"></td>
-       <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/descri%C3%A7%C3%A3o.png" style="width: 80%;" alt="Descrição"></td>
+    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/Home.png" style="width: 80% alt="Home"></td>
+     <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/produto.png" style="width: 80%;" alt="Produtos"></td>
+       <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/descri%C3%A7%C3%A3o.png" style="width: 80%;" alt="Descrição"></td>
   </tr>
   </table>
 <table>
@@ -65,16 +65,16 @@
      <td>Carrinho</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/login.png" style="width: 80% alt="Login"></td>
-        <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/checkout.png" style="width: 80%;" alt="Checkout"></td>
-    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/prints/carrinho.png" style="width: 80%;" alt="Carrinho"></td>
+    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/login.png" style="width: 80% alt="Login"></td>
+        <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/checkout.png" style="width: 80%;" alt="Checkout"></td>
+    <td><img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/prints/carrinho.png" style="width: 80%;" alt="Carrinho"></td>
   </tr>
   </table>
   
   <h2>💙 Nossa Escola Parceira: </h2>
   
   <p align="center">
-    <img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/images/logo.jpeg" style="width: 40% alt="DH"></td>
+    <img src="https://github.com/AllezitoBR/ProjetoIntegrador-DH/blob/master/public/images/logo.jpeg" style="width: 40% alt="DH"></td>
 </p>
 <br>
                                                                                                                       

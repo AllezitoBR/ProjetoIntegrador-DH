@@ -110,7 +110,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     height: 90vh;
-    width: 100%;
+    margin-top: -5px;
 }
 
 .carousel-inner {
@@ -332,8 +332,8 @@ footer {
     padding-bottom: 1rem;
     border-radius: 20px 20px 0 0;
     margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 2rem;
+    margin-right: 2rem;
     font-family: "roboto";
 }
 
@@ -358,9 +358,6 @@ footer li {
 
 .footer-container img {
     height: 40px;
-    margin-top: -10px;
-    margin-left: -20px;
-    margin-bottom: 10px;
 }
 
 .footer-payments h2 {
@@ -369,17 +366,11 @@ footer li {
 }
 
 .footer-list li a {
-    margin-top: 0.6rem;
-    padding-bottom: 0.6rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
     display: block;
     line-height: 1.5rem;
     color: black;
-    margin-left: -20px;
-}
-
-.footer-list li a:hover {
-    text-decoration: none;
-    font-weight: bold;    
 }
 
 .footer-cards {
@@ -418,25 +409,4 @@ footer li {
     border-top: 0.2rem solid #FF8038;
     margin-top: 2rem;
     text-align: center;
-}
-
-@media(max-width: 450px) {
-
-
-.menu img {
-    height: 2rem;
-    margin-top: 15px;
-}
-
-.menu ul li {
-    
-}
-
-/*Banner*/
-
-.container-banner {
-    height: 50vh;
-    padding-top: 5vh;
-    padding-bottom: 15vh;
-}
 }
