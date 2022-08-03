@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var checkoutRouter = require('./routes/checkout');
 
 var app = express();
+const session = require('express-session');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'frase secreta projeto integrador',
+  resave: true,
+  saveUninitialized: true
+}));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

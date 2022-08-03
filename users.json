@@ -1,0 +1,12 @@
+[
+    {
+        "nome": "teste",
+        "email": "teste@ccc.com",
+        "senha": "$2b$11$CQL9ZPglOFjyROjNmsQS/eP/hEdVKXdnR/Xxv1vo5AP8ZkFMLjnuK"
+    },
+    {
+        "nome": "teste2",
+        "email": "teste2@ccc.com",
+        "senha": "$2b$11$6sQrXPz5sdtJLeWJQCD0megd.b6LXmTcezGu5QRPK7GmTVJZIP6Ie"
+    }
+]
