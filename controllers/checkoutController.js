@@ -14,6 +14,16 @@ const controllerCheckout = {
         //let venda = req.body;
         res.redirect('/checkoutres2')
     },
+    FormaPagamento: (req, res) =>{
+        //fazer o redirect
+        //let venda = req.body;
+        res.redirect('/checkoutres2')
+    },
+    PreviewFinalVenda: (req, res) =>{
+        //fazer o redirect
+        //let venda = req.body;
+        res.redirect('/checkoutresPrevVenda')
+    },
     CHECKOUT3: (req, res) =>{
         res.render('./Checkout/checkout3');
     },
@@ -25,6 +35,9 @@ const controllerCheckout = {
     },
     CHECKOUTRES2: (req, res) =>{
         res.render('./Checkout/checkoutRes2');
+    },
+    CHECKOUTRESPREVVENDA: (req, res) =>{
+        res.render('./Checkout/checkoutResPrevVenda');
     },
     SUCESSOCONTROLER: (req, res) =>{
         res.render('./Checkout/sucessoCheckout');

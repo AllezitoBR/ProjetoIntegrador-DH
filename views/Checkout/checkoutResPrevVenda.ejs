@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout responsivo 1</title>
+    <title>Checkout Resumo Compra</title>
 </head>
 
 <body>
@@ -34,79 +34,110 @@
 
     <main>
              <section class="container-fluid pb-5">     
-                <a href="../">< Carrinho</a> 
+            
                 <div class="row">       
                     <div class="col-lg-8 bg-light">
                         <div class="border border-light">
-                            <div class="py-3"><h5>Como você quer receber ou retirar sua compra?</h5></div>
-                            <div class="m-2">Endereço</div>
+                            <div class="py-4"><h5>Revise e confirme sua compra</h5></div>
+                            <div class="m-0">Detalhes da entrega</div>
                             <div>
                             <table class="table table-hover table-striped">
                                 <tbody>
                                   <tr>
-                                    <th scope="row"><img src="../images/brcheck1.png" alt="bt localizacao end" ></th>
+                                    <th scope="row"><img src="../images/brcheck1.png" alt="bt localizacao end" >
+                                    </th>
                                     <td><h5>Jose Antônio Silva Santos</h5>
                                        Rua Doutor Genésio Salles                                
-                                       - CEP 410000000 - Rio de Janeiro, RJ </td>
+                                       - CEP 410000000 - Rio de Janeiro, RJ 
+                                    </td>
                                     <td style="vertical-align: middle;">                                    
-                                        <a style="color: orange" href="#">Editar ou escolher outro</a></td>                                    
+                                        <a style="color: orange" href="/checkoutRes">Editar ou escolher outro</a>
+                                    </td>                                    
                                   </tr>
                                 </tbody>
                             </table>
                             </div>
-                            <div><h5>Receber compra</h5></div>
-                            
-                            <div class="form-group">
-                                <div>
-                                <table class="table table-hover table-striped">
-                                    <tbody>
-                                      <tr>
-                                        <th><div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                             
-                                            </label>
-                                          </div></th>
-                                        <td>Chegará hoje entre as 16 e 21 h </td>
-                                        <td class="text-center" style="color:green">Grátis</td>
-                                      </tr>
-                                    </tbody>
-                                </table>
-                        
-                            
-                                <table class="table table-hover table-striped">
-                                    <tbody>
-                                      <tr>
-                                        <th><div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="exampleRadios1">
-                                             
-                                            </label>
-                                          </div></th>
-                                        <td>Chegará no seu endereço segunda feira</td>
-                                        <td class="text-center">47,00</td>
-                                      </tr>
-                                    </tbody>
-                                </table>
-                                </div>
+                            <div class="py-1  m-0">
+                              <h5>Detalhes do pagamento</h5>
+                            </div>                           
+                            <div class="form-group container">
+                              <div class="row">
+                                <table class="table bg-white">                                                                
+                                        <tbody>                                         
+                                            <tr>
+                                              <th class="col-1">
+                                                <img src="../images/pix.png" alt="">
+                                              </th>
+                                              <td class="col-9"><h5>PIX</h5>
+                                                <p class="text-left" style="color:green">Aprovação imediata</p>
+                                              </td>
+                                              <th class="col-2" style="vertical-align: middle;">
+                                                <a style="color: orange" href="/checkoutRes2">Alterar</a></td>      
+                                              </th>
+                                            </tr>                                 
+                                        </tbody>
+                                </table>                                                                                       
+                              </div>                     
                             
 
-                            
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
-                                        <div class="col">
-                                          <form action="/checkout2" method="POST">
-                                             <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar</button>
-                                          </form>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
                                 
                             </div>
+
+                                                       
+                            <div class="form-group">
+                              <div>
+                              <table class="table table-hover table-striped">
+                                  <tbody>
+                                    <tr>
+                                      <th>
+                                        <td  class="col-1">
+                                          <img style="max-width: 50px;" src="../images/carro0.png" alt="">
+                                        </td>                                                                         
+                                      <td  class="col-8">
+                                        Chegará hoje entre as 16 e 21 h 
+                                      </td>
+                                      <td class="col-3 text-center" style="color:green">
+                                        Grátis
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                      
+                              <table class="table table-hover table-striped">
+                                <tbody>
+                                  <tr>
+                                    <th>
+                                      <td  class="col-1">
+                                        <img style="max-width: 50px;" src="../images/carro1.png" alt="">
+                                      </td>                                                                         
+                                    <td  class="col-8">
+                                      Chegará hoje entre as 16 e 21 h 
+                                    </td>
+                                    <td class="col-3 text-center" style="color:green">
+                                      Grátis
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>   
+                             
+                              </div>                          
+                                
+                              <div class="container">
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col"></div>
+                                    <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
+                                    <div class="col">
+                                      <form action="/confirmarcompra" method="POST">
+                                          <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">
+                                            Confirmar a compra
+                                          </button>
+                                      </form>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                           </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
