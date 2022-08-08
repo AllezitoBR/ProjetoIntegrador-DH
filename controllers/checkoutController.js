@@ -3,46 +3,41 @@ const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
 
 const controllerCheckout = {
-    CHECKOUT1: (req, res) =>{
-        res.render('./Checkout/checkout1');
-    },
-    CHECKOUT2: (req, res) =>{
-        res.render('./Checkout/checkout2');
-    },
-    CHECKOUT2TIPOFRETE: (req, res) =>{
+
+    checkoutRetirarCompra: (req, res) =>{
         //fazer o redirect
         //let venda = req.body;
-        res.redirect('/checkoutres2')
+        res.render('./Checkout/checkoutRetirarCompra');
     },
     FormaPagamento: (req, res) =>{
         //fazer o redirect
         //let venda = req.body;
-        res.redirect('/checkoutres2')
+        res.redirect('/checkoutFormaPagamento')
     },
     PreviewFinalVenda: (req, res) =>{
         //fazer o redirect
         //let venda = req.body;
         res.redirect('/checkoutresPrevVenda')
     },
-    CHECKOUT3: (req, res) =>{
-        res.render('./Checkout/checkout3');
-    },
-    CHECKOUT4: (req, res) =>{
-        res.render('./Checkout/checkout4');
-    },
-    CHECKOUTRES: (req, res) =>{
+
+    checkoutRes: (req, res) =>{
         res.render('./Checkout/checkoutRes');
     },
-    CHECKOUTRES2: (req, res) =>{
+    checkoutRes2: (req, res) =>{
         res.render('./Checkout/checkoutRes2');
     },
-    CHECKOUTRESPREVVENDA: (req, res) =>{
+    checkoutFormaPagamento: (req, res) =>{
+        res.render('./Checkout/checkoutFormaPagamento');
+    },
+    
+    checkoutResPrevVenda: (req, res) =>{
         res.render('./Checkout/checkoutResPrevVenda');
     },
-    SUCESSOCONTROLER: (req, res) =>{
+    
+    sucessoControler: (req, res) =>{
         res.render('./Checkout/sucessoCheckout');
     },
-    SALVARVENDA: (req, res) =>{
+    salvarVenda: (req, res) =>{
         //fazer o redirect
         //let venda = req.body;
         console.log('teste venda');
