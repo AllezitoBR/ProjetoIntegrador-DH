@@ -12,6 +12,11 @@ router.post('/checkout2', controllerCheckout.FormaPagamento);
 //router.get('/checkout3', controllerCheckout.CHECKOUT3);
 //router.get('/checkout4', controllerCheckout.CHECKOUT4);
 router.get('/checkoutRes', controllerCheckout.checkoutRes);
+router.get('/checkoutUdpEndereco', controllerCheckout.checkoutUdpEndereco);
+router.get('/checkoutEnd', controllerCheckout.checkoutEnd);
+router.post('/checkoutEnd', controllerCheckout.checkoutEndSave);
+
+
 router.get('/checkoutRetirarCompra', controllerCheckout.checkoutRetirarCompra);
 router.get('/checkoutRes2', controllerCheckout.checkoutRes2);
 
