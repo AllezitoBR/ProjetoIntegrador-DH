@@ -38,6 +38,7 @@ const controllerCheckout = {
     },
     checkoutEndSave: (req, res) =>{
         const {rua, numero, complemento, cep, bairro, cidade, estado} = req.body
+        if (rua != '') {
         Endereco.create({
             rua: rua,
             numero: numero, 
@@ -48,7 +49,9 @@ const controllerCheckout = {
             estado: estado,
             usuarios_id: 1
         }).then(() => {res.redirect('/checkoutEnd')}).catch((error) => res.send(error))
-  
+    } else {
+        console.log('Digite o nome da rua')
+    }
     },
 
 
