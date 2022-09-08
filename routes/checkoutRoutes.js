@@ -5,7 +5,6 @@ const {check: checar} = require('express-validator'); // importar validator
 let validarVEnda =[
     // cirar a validação para a venda
 ]; //array de validações
-
 //router.get('/checkout1', controllerCheckout.CHECKOUT1);
 //router.get('/checkout2', controllerCheckout.CHECKOUT2);
 router.post('/checkout2', controllerCheckout.FormaPagamento);
