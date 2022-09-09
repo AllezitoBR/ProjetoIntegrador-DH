@@ -42,16 +42,16 @@
                             <div class="m-2">Endereço</div>
                             <div>
                             <table class="table table-hover table-striped">
-                                <tbody>
+                                <tbody><%{%>
                                   <tr>
                                     <th scope="row"><img src="../images/brcheck1.png" alt="bt localizacao end" ></th>
-                                    <td><h5>Jose Antônio Silva Santos</h5>
-                                       Rua Doutor Genésio Salles                                
-                                       - CEP 410000000 - Rio de Janeiro, RJ </td>
+                                    <td>  <h5><%=userCompra.nome%></h5>
+                                       Rua <%=endrCompra.rua%>                                
+                                       - CEP <%=endrCompra.cep%>  - <%=endrCompra.cidade%>, <%=endrCompra.estado%> </td>
                                     <td style="vertical-align: middle;">                                    
-                                        <a style="color: orange" href="/checkoutEnd">Editar ou escolher outro</a></td>                                    
+                                        <a style="color: orange" href="/checkoutEnd/<%=compra.usuarios_id%>">Editar ou escolher outro</a></td>                                    
                                   </tr>
-                                </tbody>
+                                </tbody> <% }%> 
                             </table>
                             </div>
                             <div><h5>Receber compra</h5></div>
@@ -96,7 +96,7 @@
                                     <div class="row">
                                         <div class="col"></div>
                                         <div class="col"></div>
-                                        <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
+                                        <%{%><div class="col text-center"><strong>Você pagará: <%=compra.total%></strong></div><% }%> 
                                         <div class="col">
                                           <form action="/checkout2" method="POST">
                                              <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar</button>

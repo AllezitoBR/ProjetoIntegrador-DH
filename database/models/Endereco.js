@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         cep:DataTypes.INTEGER,
         bairro: DataTypes.STRING,
         cidade: DataTypes.STRING,
-        estado: DataTypes.STRING,
+        estado: DataTypes.STRING,        
         usuarios_id:DataTypes.INTEGER
     },
         {

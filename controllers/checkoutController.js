@@ -38,6 +38,8 @@ const controllerCheckout = {
         res.send(id)
        // res.render('./Checkout/checkoutUdpEndereco');
     },
+
+    /* ******************* CONTROLERS DA COMPRA *************************** */
     checkoutCompra: (req, res) =>{
         res.render('./Checkout/checkoutCompra');
     },
@@ -46,12 +48,18 @@ const controllerCheckout = {
         const {id} = req.params
         Compra.findByPk(id).then(compra =>{
             if (compra) {
-                return res.render('./checkout/checkoutCompra', {compra: compra})
+                Usuario.findByPk(compra.usuarios_id).then( userCompra =>{                    
+                
+                Endereco.findByPk(compra.endereco_id).then( endrCompra =>{                   
+              
+                return res.render('./checkout/checkoutCompra', {compra: compra, userCompra: userCompra, endrCompra: endrCompra})                       
+            })})
             }
+
         })
        // res.render('./Checkout/checkoutUdpEndereco');
     },
-
+/* ******************* CONTROLERS ENDEREÇO *************************** */
     checkoutEnd: (req, res) =>{
         Endereco.findAll({ raw: true, order: [['id', 'DESC']] }).then(ends => {
             res.render('./Checkout/checkoutEnd', { ends: ends }) //mandando todos os endereços mas nao eh isso que quero
