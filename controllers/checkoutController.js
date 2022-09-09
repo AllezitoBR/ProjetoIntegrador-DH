@@ -1,4 +1,5 @@
-const {sequelize, Endereco} = require('../database/models/index')
+const {sequelize, Endereco, Compra, Usuario, endereco_usuario} = require('../database/models/index')
+//const {sequelize, Compra} = require('../database/models/index')
 const fs = require("fs");
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt');
@@ -27,17 +28,42 @@ const controllerCheckout = {
     checkoutRes: (req, res) =>{
         res.render('./Checkout/checkoutRes');
     },
+
     checkoutUdpEndereco: (req, res) =>{
         res.render('./Checkout/checkoutUdpEndereco');
     },
+
+    checkoutUdpEnderecoId: (req, res) =>{ // abrir compra de um usuarioId
+        const {id} = req.params
+        res.send(id)
+       // res.render('./Checkout/checkoutUdpEndereco');
+    },
+
+
     checkoutEnd: (req, res) =>{
         Endereco.findAll({ raw: true, order: [['id', 'DESC']] }).then(ends => {
-            res.render('./Checkout/checkoutEnd', { ends: ends })
+            res.render('./Checkout/checkoutEnd', { ends: ends }) //mandando todos os endereços mas nao eh isso que quero
           })
     /*     res.render('./Checkout/checkoutEnd'); */
     },
+    checkoutEndId: (req, res) =>{
+    const { id } = req.params
+    Usuario.findByPk(id).then(users => {
+    if (users) {
+        Endereco.findAll({ 
+            where: {usuarios_id: users.id},
+            order: [['id', 'DESC']] 
+        }).then(ends => {
+           return res.render('./Checkout/checkoutEnd', {users: users, ends: ends }) //mandando todos os endereços mas nao eh isso que quero
+        })   
+    }
+    })
+      //  res.redirect('./Checkout/checkoutEnd')//senao achar fica na paginas ou vai pra de enderço 
+    },
+
+
     checkoutEndSave: (req, res) =>{
-        const {rua, numero, complemento, cep, bairro, cidade, estado} = req.body
+        const {rua, numero, complemento, cep, bairro, cidade, estado, usuarios_id} = req.body
         if (rua != '') {
         Endereco.create({
             rua: rua,
@@ -47,8 +73,9 @@ const controllerCheckout = {
             bairro: bairro,
             cidade: cidade,
             estado: estado,
-            usuarios_id: 1
-        }).then(() => {res.redirect('/checkoutEnd')}).catch((error) => res.send(error))
+            usuarios_id:usuarios_id
+        }).then(() => {
+            res.redirect('/checkoutEnd/'+usuarios_id)}).catch((error) => res.send(error))
     } else {
         console.log('Digite o nome da rua')
     }

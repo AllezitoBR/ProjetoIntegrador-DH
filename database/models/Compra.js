@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         endereco_id:DataTypes.INTEGER
     },
         {
-            tableName: 'compra',
-            timestamps: false
+        tableName: 'compra',
+        timestamps: false
         })
 
 
@@ -23,8 +23,6 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         })   
         }
-
-        
 
         Compra.associate= (models)=>{
             Compra.belongsTo(models.Usuario,{

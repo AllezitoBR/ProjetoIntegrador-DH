@@ -7,12 +7,15 @@ let validarVEnda =[
 ]; //array de validações
 //router.get('/checkout1', controllerCheckout.CHECKOUT1);
 //router.get('/checkout2', controllerCheckout.CHECKOUT2);
-router.post('/checkout2', controllerCheckout.FormaPagamento);
+//router.post('/checkout2', controllerCheckout.FormaPagamento);
 //router.get('/checkout3', controllerCheckout.CHECKOUT3);
 //router.get('/checkout4', controllerCheckout.CHECKOUT4);
-router.get('/checkoutRes', controllerCheckout.checkoutRes);
+//router.get('/checkoutRes', controllerCheckout.checkoutRes); 
 router.get('/checkoutUdpEndereco', controllerCheckout.checkoutUdpEndereco);
+router.get('/checkoutUdpEndereco', controllerCheckout.checkoutUdpEndereco);
+router.get('/checkoutUdpEndereco/:id', controllerCheckout.checkoutUdpEnderecoId);
 router.get('/checkoutEnd', controllerCheckout.checkoutEnd);
+router.get('/checkoutEnd/:id', controllerCheckout.checkoutEndId);
 router.post('/checkoutEnd', controllerCheckout.checkoutEndSave);
 
 

@@ -15,13 +15,13 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         })
 
-        Endereco.associate = (models)=>{
-            Endereco.belongsTo(models.Usuario,{
+/*         Endereco.associate = (models)=>{
+            Endereco.hasMany(models.Usuario,{
                 as:'endereco_usuario',
                 foreignKey:'usuarios_id'
         })   
-        }
- 
+        } */
+
 /*         Categoria.associate = (models)=>{
 
             Categoria.hasMany(models.Produto,{
