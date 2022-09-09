@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         })
 
 
-        Compra.associate = (models)=>{
+      /*   Compra.associate = (models)=>{
          Compra.belongsToMany(models.Produto,{
             as:'compra_produto',
             through:'compra_has_produto',
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
                 as:'compra_produto',
                 foreignKey:'produto_id'
             })
-        }  
+        }   */
 
     return Compra
 }

@@ -33,12 +33,24 @@ const controllerCheckout = {
         res.render('./Checkout/checkoutUdpEndereco');
     },
 
-    checkoutUdpEnderecoId: (req, res) =>{ // abrir compra de um usuarioId
+    checkoutUdpEnderecoId: (req, res) =>{ // teste pode apagar
         const {id} = req.params
         res.send(id)
        // res.render('./Checkout/checkoutUdpEndereco');
     },
+    checkoutCompra: (req, res) =>{
+        res.render('./Checkout/checkoutCompra');
+    },
 
+    checkoutCompraId: (req, res) =>{ // abrir compra de um usuarioId
+        const {id} = req.params
+        Compra.findByPk(id).then(compra =>{
+            if (compra) {
+                return res.render('./checkout/checkoutCompra', {compra: compra})
+            }
+        })
+       // res.render('./Checkout/checkoutUdpEndereco');
+    },
 
     checkoutEnd: (req, res) =>{
         Endereco.findAll({ raw: true, order: [['id', 'DESC']] }).then(ends => {

@@ -14,7 +14,11 @@ let validarVEnda =[
 router.get('/checkoutUdpEndereco', controllerCheckout.checkoutUdpEndereco);
 router.get('/checkoutUdpEndereco', controllerCheckout.checkoutUdpEndereco);
 router.get('/checkoutUdpEndereco/:id', controllerCheckout.checkoutUdpEnderecoId);
+
+
 router.get('/checkoutEnd', controllerCheckout.checkoutEnd);
+router.get('/checkoutCompra/:id', controllerCheckout.checkoutCompraId);
+router.get('/checkoutCompra', controllerCheckout.checkoutCompra);
 router.get('/checkoutEnd/:id', controllerCheckout.checkoutEndId);
 router.post('/checkoutEnd', controllerCheckout.checkoutEndSave);
 
