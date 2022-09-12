@@ -12,3 +12,6 @@ formCadastro.addEventListener('submit', function(event){
     console.log(error)
     event.preventDefault()
 })
+
+const teste  = 'teste'
+     alert(teste); 

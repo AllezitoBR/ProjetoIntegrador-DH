@@ -21,7 +21,7 @@ router.get('/checkoutCompra/:id', controllerCheckout.checkoutCompraId);
 router.get('/checkoutCompra', controllerCheckout.checkoutCompra);
 router.get('/checkoutEnd/:id', controllerCheckout.checkoutEndId);
 router.post('/checkoutEnd', controllerCheckout.checkoutEndSave);
-
+router.delete('/checkoutEnd/:id', controllerCheckout.deletarEnd);
 
 router.get('/checkoutRetirarCompra', controllerCheckout.checkoutRetirarCompra);
 router.get('/checkoutRes2', controllerCheckout.checkoutRes2);

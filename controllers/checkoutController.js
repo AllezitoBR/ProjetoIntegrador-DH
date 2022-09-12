@@ -59,6 +59,7 @@ const controllerCheckout = {
         })
        // res.render('./Checkout/checkoutUdpEndereco');
     },
+/* ******************* FINAL CONTROLERS DA COMPRA *************************** */
 /* ******************* CONTROLERS ENDEREÇO *************************** */
     checkoutEnd: (req, res) =>{
         Endereco.findAll({ raw: true, order: [['id', 'DESC']] }).then(ends => {
@@ -78,13 +79,13 @@ const controllerCheckout = {
         })   
     }
     })
-      //  res.redirect('./Checkout/checkoutEnd')//senao achar fica na paginas ou vai pra de enderço 
     },
-
-
     checkoutEndSave: (req, res) =>{
         const {rua, numero, complemento, cep, bairro, cidade, estado, usuarios_id} = req.body
-        if (rua != '') {
+        erros = []
+/*         if (rua == '') erros.push('Precisa digitar a rua')
+        if (estado.lengt > '2') erros.push('Estado maior que 2') */
+        if (erros == '') {
         Endereco.create({
             rua: rua,
             numero: numero, 
@@ -97,12 +98,17 @@ const controllerCheckout = {
         }).then(() => {
             res.redirect('/checkoutEnd/'+usuarios_id)}).catch((error) => res.send(error))
     } else {
-        console.log('Digite o nome da rua')
+        console.log('Dadas invalidos no cadastro do endereço: ' + erros )
     }
     },
+    deletarEnd: (req, res) => {
+        Endereco.destroy( {where: {id: req.params.id}} ).then(result => {
+            res.redirect('/checkoutEnd/'+usuarios_id)
+         }).catch((error) => res.send(error))
+       
+    },
 
-
-
+/* ******************* FINAL CONTROLERS ENDEREÇO *************************** */
     checkoutRes2: (req, res) =>{
         res.render('./Checkout/checkoutRes2');
     },

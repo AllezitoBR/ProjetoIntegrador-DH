@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override'); // poder trabalhar com o p put e delete no express
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
