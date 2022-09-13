@@ -60,6 +60,7 @@ const controllerCheckout = {
        // res.render('./Checkout/checkoutUdpEndereco');
     },
 /* ******************* FINAL CONTROLERS DA COMPRA *************************** */
+
 /* ******************* CONTROLERS ENDEREÇO *************************** */
     checkoutEnd: (req, res) =>{
         Endereco.findAll({ raw: true, order: [['id', 'DESC']] }).then(ends => {
