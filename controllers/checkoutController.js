@@ -78,6 +78,8 @@ const controllerCheckout = {
         }).then(ends => {
            return res.render('./Checkout/checkoutEnd', {users: users, ends: ends }) //mandando todos os endereços mas nao eh isso que quero
         })   
+    }else{
+        res.send('Usuário não encontrado')
     }
     })
     },
@@ -103,12 +105,11 @@ const controllerCheckout = {
     }
     },
     deletarEnd: (req, res) => {
-        Endereco.destroy( {where: {id: req.params.id}} ).then(result => {
-            res.redirect('/checkoutEnd/'+usuarios_id)
-         }).catch((error) => res.send(error))
-       
+        const {usuarios_id} = req.body
+        Endereco.destroy( {where: {id: req.params.id}} ).then( () => {
+            res.redirect('/checkoutEnd/'+1)
+        }).catch((error) => res.send(error))
     },
-
 /* ******************* FINAL CONTROLERS ENDEREÇO *************************** */
     checkoutRes2: (req, res) =>{
         res.render('./Checkout/checkoutRes2');
@@ -116,11 +117,9 @@ const controllerCheckout = {
     checkoutFormaPagamento: (req, res) =>{
         res.render('./Checkout/checkoutFormaPagamento');
     },
-    
     checkoutResPrevVenda: (req, res) =>{
         res.render('./Checkout/checkoutResPrevVenda');
     },
-    
     sucessoControler: (req, res) =>{
         res.render('./Checkout/sucessoCheckout');
     },
@@ -135,8 +134,5 @@ const controllerCheckout = {
         console.log(req.cookies.compraprato);
         res.redirect('/confirmarcompra')
     },
- 
-
 }
-
 module.exports = controllerCheckout;
