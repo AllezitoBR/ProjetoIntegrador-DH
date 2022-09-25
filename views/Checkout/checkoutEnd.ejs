@@ -33,6 +33,7 @@
     </nav>
     <main>
         <section class="container-fluid pb-5">     
+            
             <a href="/checkoutUdpEndereco">< Carrinho</a> 
             <div class="row">       
                 <div class="col-lg-12 bg-light">
@@ -44,31 +45,39 @@
                         
                         <div class="m-2">Endereço</div>     
                         <div>
-                            
-                            <form id="formCadastro" action="/checkoutEnd" method="post"> 
+                            <div id="ulerrors" class="errors">
+                                <ul>
+                                    <!-- aqui vao os erros -->
+
+                                </ul>
+                            </div>
+                            <form id="formCadastroEnd" action="/checkoutEnd" method="post"> 
                                 <div class="mb-3">
-                                    <input type="text" name="rua" placeholder="Rua" class="form-control">
+                                    <input type="text" id="rua" name="rua" placeholder="Rua" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <input type="text" name="numero" placeholder="Numero" class="form-control">
+                                            <input type="text" id="numero" name="numero" placeholder="Numero" class="form-control">
+            <!--                                 <% if (locals.errors && erros.name) { %>
+                                                <p class="feedback"><%= errors.name %></p>
+                                            <% } %> -->
                                         </div>
                                         <div class="col">
-                                            <input type="text" name="complemento" placeholder="Complemento" class="form-control">
+                                            <input type="text" id="complemento" name="complemento" placeholder="Complemento" class="form-control">
                                         </div>
                                         <div class="col">
-                                            <input type="text" name="cep" placeholder="Cep" class="form-control">                                            
+                                            <input type="text" id="cep" name="cep" placeholder="Cep" class="form-control">                                            
                                         </div>
                                     </div>                  
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <input type="text" name="bairro" placeholder="Bairro" class="form-control">
+                                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" class="form-control">
                                         </div>
                                         <div class="col">
-                                            <input type="text" name="cidade" placeholder="Cidade" class="form-control">
+                                            <input type="text" id="cidade"  name="cidade" placeholder="Cidade" class="form-control">
                                         </div>
                                         <div class="col">
                                             <input type="text" id="estado" name="estado" placeholder="Estado" class="form-control">
@@ -76,14 +85,12 @@
                                         <div class="col">
                                             <input type="hidden" id="usuario" name="usuarios_id" value="<%=users.id%>" class="form-control">
                                         </div>
-                                        <div class="col">
-                                            
-                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Cadastrar</button>
-                                        
-                                        </div>
-                                    </div>                  
+
+                                    </div>                
                                 </div>
-                                
+                                <div class="mb-3">                                                           
+                                    <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Cadastrar</button>                            
+                                </div>  
                             </form> 
                                 <div class="mb-6">
                                     <div class="row">
@@ -91,7 +98,7 @@
                                         </div>
                                         <div class="col">
                                             
-                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Atualizar</button>
+                                           <!--  <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Atualizar</button> -->
                                             <input type="hidden" id="usuario" name="usuarios_id" value="<%=users.id%>" class="form-control">
                                         </div>
                                         <div class="col">
@@ -116,48 +123,62 @@
                         <% }%> 
                         <div><h5>Endereços</h5></div>   
                         <div class="form-group">
-                            <div>
-                            <%ends.forEach(a=>{%>      
-                            <table class="table table-hover table-striped">
-                                <tbody>
-                                <tr>
-                                    <th>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                            </label>
-                                        </div>
-                                    </th>
-                                    <td>
-                                        <h5>Rua: <%=a.rua%>
-                                        </h5>
-                                        <p>n.º: <%=a.numero%>, <%=a.complemento%>, <%=a.bairro%>
-                                                        <%=a.cidade%>-<%=a.estado%> <%=a.id%>
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <form action="/deletarEnd/<%= a.id%>?_method_DELETE"  method="post"> 
-                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Apagar</button>
-                                        </form>
-                                    </td>
-                                    <!-- <td><%=a.rua%></td>
-                                    <td><%=a.numero%></td>
-                                    <td><%=a.complemento%></td>
-                                    <td class="text-center" style="color:green"><%=a.bairro%></td> -->
-                                </tr>
-                                </tbody>
-                            </table>
-                            <% }) %>
-                            </div>                                                        
+                           <!--  <form action="/AlterarEnd?_method=PUT" method="POST"> -->
+                                <div>
+                                <%ends.forEach(a=>{%>      
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <h5>Rua: <%=a.rua%>
+                                            </h5>
+                                            <p>n.º: <%=a.numero%>, <%=a.complemento%>, <%=a.bairro%>
+                                                            <%=a.cidade%>-<%=a.estado%> <%=a.id%>
+                                            </p>
+                                            <form action="/deletarEnd/<%= a.id%>?_method_DELETE"  method="post"> 
+                                                <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Apagar Endereço</button>
+                                            </form>
+                                        </td>
+                                    
+                                        <td>                                                                                                        
+                                            <form action="/AlterarEnd/<%=a.id%>" method="GET"> 
+                                                <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar Compra</button>  
+                                            </form>                                                                                  
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <!-- <td><%=a.rua%></td>
+                                        <td><%=a.numero%></td>
+                                        <td><%=a.complemento%></td>
+                                        <td class="text-center" style="color:green"><%=a.bairro%></td> -->
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <% }) %> 
+                                </div> 
+                         <!--    </form>  ************ -->                                                     
                             <div class="container">
                                 <div class="row">
                                     <div class="col"></div>
                                     <div class="col"></div>
                                     <div class="col text-center"><strong></strong></div>
                                     <div class="col">
-                                        <form action="/checkoutCompra/1" method="GET">
-                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >UPDATE - ATUALIAR COMPRA</button>
-                                        </form>
+             <!--                            <form action="/checkoutCompra/1" method="GET">
+                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >ATUALIAR COMPRA</button>
+                                        </form> -->
                                     </div>
                                 </div>
                                 
@@ -181,7 +202,7 @@
 <!--     <script src="/src/requests/default.js"></script> -->
 <!--  <%- include('./partials/footerCheckout.ejs') %>-->
 
-<script type="text/javascript" src="/jsCheckoutEnd2.js"></script> 
+<script type="text/javascript" src="/validaCheckoutEnd.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 

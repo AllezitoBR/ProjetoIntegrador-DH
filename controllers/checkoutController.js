@@ -3,6 +3,7 @@ const {sequelize, Endereco, Compra, Usuario, endereco_usuario} = require('../dat
 const fs = require("fs");
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt');
+const { body, validationResult } = require('express-validator');
 
 
 /* const EnderecoModels = require("../database/models/Endereco"); */
@@ -47,15 +48,19 @@ const controllerCheckout = {
     checkoutCompraId: (req, res) =>{ // abrir compra de um usuarioId
         const {id} = req.params
         Compra.findByPk(id).then(compra =>{
-            if (compra) {
-                Usuario.findByPk(compra.usuarios_id).then( userCompra =>{                    
-                
-                Endereco.findByPk(compra.endereco_id).then( endrCompra =>{                   
-              
-                return res.render('./checkout/checkoutCompra', {compra: compra, userCompra: userCompra, endrCompra: endrCompra})                       
-            })})
-            }
-
+        if (compra) {
+            req.session.compraSalva = compra;
+            Usuario.findByPk(compra.usuarios_id).then( userCompra =>{    
+                req.session.compraUsuario = compra.usuarios_id;
+                if (userCompra) {
+                    Endereco.findByPk(compra.endereco_id).then( endrCompra =>{    
+                    if (endrCompra){
+                        return res.render('./checkout/checkoutCompra', {compra: compra, userCompra: userCompra, endrCompra: endrCompra})                       
+                    }else{res.send('Endereço não encontrado')}                                          
+                    })
+                }else{res.send('Usuário não encontrado')}                                         
+            })
+        }else{res.send('Compra não encontrada')}  
         })
        // res.render('./Checkout/checkoutUdpEndereco');
     },
@@ -72,11 +77,18 @@ const controllerCheckout = {
     const { id } = req.params
     Usuario.findByPk(id).then(users => {
     if (users) {
+        req.session.usuarioCompra = id;
         Endereco.findAll({ 
             where: {usuarios_id: users.id},
             order: [['id', 'DESC']] 
         }).then(ends => {
-           return res.render('./Checkout/checkoutEnd', {users: users, ends: ends }) //mandando todos os endereços mas nao eh isso que quero
+           //
+           Compra.findAll(  { raw: true, where: {usuarios_id: id},
+            order: [['id', 'DESC']] 
+        }).then( compraDoUsuario =>{
+            return res.render('./Checkout/checkoutEnd', {users: users, ends: ends, compraDoUsuario: compraDoUsuario, CompraSalva: req.session.compraSalva }) //mandando todos os endereços mas nao eh isso que quero 
+            })
+           //
         })   
     }else{
         res.send('Usuário não encontrado')
@@ -85,10 +97,12 @@ const controllerCheckout = {
     },
     checkoutEndSave: (req, res) =>{
         const {rua, numero, complemento, cep, bairro, cidade, estado, usuarios_id} = req.body
-        erros = []
+
 /*         if (rua == '') erros.push('Precisa digitar a rua')
         if (estado.lengt > '2') erros.push('Estado maior que 2') */
-        if (erros == '') {
+        const errors = validationResult(req);
+        console.log(errors)
+        if (errors.isEmpty()) {
         Endereco.create({
             rua: rua,
             numero: numero, 
@@ -99,17 +113,31 @@ const controllerCheckout = {
             estado: estado,
             usuarios_id:usuarios_id
         }).then(() => {
-            res.redirect('/checkoutEnd/'+usuarios_id)}).catch((error) => res.send(error))
+            res.redirect('/checkoutEnd/'+usuarios_id)}).catch((error) => res.send(errors))
     } else {
-        console.log('Dadas invalidos no cadastro do endereço: ' + erros )
+         /*  res.redirect('checkoutEnd/'+usuarios_id, {errors: errors.mapped(), old: req.body}); */
+        res.redirect('/checkoutEnd/'+usuarios_id);
     }
     },
     deletarEnd: (req, res) => {
         const {usuarios_id} = req.body
         Endereco.destroy( {where: {id: req.params.id}} ).then( () => {
-            res.redirect('/checkoutEnd/'+1)
+            res.redirect('/checkoutEnd/'+1)  
         }).catch((error) => res.send(error))
     },
+
+    AlterarEnd:(req, res) => {
+        let  idEnd  = req.params;
+        let { id } =req.session.compraSalva
+
+        console.log(req.params.id )
+        console.log(id)
+        
+        Compra.update( {endereco_id: req.params.id }, {where: {id: id}} ).then( () => {
+            res.redirect('/checkoutCompra/'+id)  
+        }).catch((error) => res.send(error))
+    },
+
 /* ******************* FINAL CONTROLERS ENDEREÇO *************************** */
     checkoutRes2: (req, res) =>{
         res.render('./Checkout/checkoutRes2');
