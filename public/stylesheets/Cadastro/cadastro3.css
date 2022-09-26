@@ -224,6 +224,7 @@ label{
 }
 
 button{
+    margin-top: 2rem;
     background-color: #fa833e;
     border: none;
     color: white;
@@ -234,10 +235,29 @@ button{
     border-radius: 5px;
 }
 
+.forgot-pass{
+    margin-top: 1rem;
+}
+
+.forgot-pass:hover{
+    text-decoration: underline;
+}
 
 button:hover{
     background-color: orangered;
     transition:0.5s;
+}
+
+.sign_up{
+    margin-top: 5rem;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.sign_up a:hover {
+    text-decoration: underline;
 }
 
 /* fim main*/

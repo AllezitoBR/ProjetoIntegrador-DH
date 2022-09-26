@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var bcrypt = require('bcrypt');
+const passport = require('passport');
+require('./database/config/auth')(passport);
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,7 +19,7 @@ const usuarioRouter = require('./routes/usuario');
 var descriptionRouter = require("./routes/descriptionRoute");
 var checkoutRouter = require('./routes/checkout');
 
-//var loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware');
+
 
 
 var app = express();
@@ -26,7 +30,16 @@ app.use(session({
   saveUninitialized:true,
 }));
 
-//app.use(loggedUserDataMiddleware);
+//Middleware
+app.use((req, res, next) => {
+  res.locals.Usuario = req.Usuario || null
+  next()
+})
+
+app.use(express.json());
+
+app.use(passport.initialize());
+app.use(passport.session())
 
 
 // view engine setup
@@ -36,7 +49,6 @@ app.set('view engine', 'ejs');
 
 
 app.use(logger('dev'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

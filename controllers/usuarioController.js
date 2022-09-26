@@ -51,10 +51,10 @@ const usuarioController = {
             if (senhaValida) {
                 req.session.isAuth = dadosUsuario.email
                 
-                return res.redirect('/')
+                //return res.redirect('/')
             }
         }
-          return res.redirect('/users/cadastro')
+          return res.redirect('/')
 
        // return res.send('Login ou senha errada')
     },

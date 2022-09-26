@@ -10,70 +10,70 @@ async function buscaImagens(){
 
 async function criaVariasImagens(){
     const alu = await Imagem.bulkCreate([{
-        url:'../images/Sousplats/1.PNG',
-        produto_id: 74
+        url:'../images/42 pecas/1.PNG',
+        produto_id: 194
         
     },
        
     {
-        url:'../images/Sousplats/2.PNG',
-        produto_id: 75
+        url:'../images/42 pecas/2.PNG',
+        produto_id: 195
     },
 
     {
-        url:'../images/Sousplats/3.PNG',
-        produto_id: 76
+        url:'../images/42 pecas/3.PNG',
+        produto_id: 196
     },
 
     {
-        url:'../images/Sousplats/4.PNG',
-        produto_id: 77
+        url:'../images/42 pecas/4.PNG',
+        produto_id: 197
         
     },
        
     {
-        url:'../images/Sousplats/5.PNG',
-        produto_id: 78
+        url:'../images/42 pecas/5.PNG',
+        produto_id: 198
     },
 
     {
-        url:'../images/Sousplats/6.PNG',
-        produto_id: 79
+        url:'../images/42 pecas/6.PNG',
+        produto_id: 199
     },
 
     {
-        url:'../images/Sousplats/7.PNG',
-        produto_id: 80
+        url:'../images/42 pecas/7.PNG',
+        produto_id: 200
         
     },
        
     {
-        url:'../images/Sousplats/8.PNG',
-        produto_id: 81
+        url:'../images/42 pecas/8.PNG',
+        produto_id: 201
     },
 
     {
-        url:'../images/Sousplats/9.PNG',
-        produto_id: 82
+        url:'../images/42 pecas/9.PNG',
+        produto_id: 202
     },
 
     {
-        url:'../images/Sousplats/10.PNG',
-        produto_id: 83
+        url:'../images/42 pecas/10.PNG',
+        produto_id: 203
         
     },
        
-    {
-        url:'../images/Sousplats/11.PNG',
-        produto_id: 84
-    },
-
-    {
-        url:'../images/Sousplats/12.PNG',
-        produto_id: 85
-    },
-
     /*{
+        url:'../images/42 pecas/11.PNG',
+        produto_id: 192
+    },
+
+    {
+        url:'../images/42 pecas/12.PNG',
+        produto_id: 193
+    },
+
+    {
         url:'../images/PratoSobremesas/13.PNG',
         produto_id: 62
         

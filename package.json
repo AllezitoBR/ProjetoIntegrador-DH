@@ -16,7 +16,10 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.21.3"
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.21.3",
+    "sweetalert2": "^11.4.31"
   },
   "devDependencies": {
     "sequelize-cli": "^6.4.1"

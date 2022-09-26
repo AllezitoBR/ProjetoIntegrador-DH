@@ -3,116 +3,116 @@ const {sequelize, Produto} = require('./database/models/index');
 
 async function criaVariosProdutos(){
     const alu = await Produto.bulkCreate([{
-        nome: 'PRATO DE BOLO SEM PÉ BOUQUET GARNI VERDE SECO - COLEÇÃO ERVAS Ø 41CM',
-        preco: 914.66,
+        nome: 'APARELHO DE JANTAR 42 PEÇAS COUP FOLIAGE',
+        preco: 1110.86,
         marca: 'Porto Brasil Cerâmica',
         qtdeEmEstoque: 20,
-        descricao: 'Os verdes da Coleção Ervas vão encher a sua mesa de cor. Mas não é tudo verde? Ah, mas não é um verde só: tem verde vivo, verde suave, verde fresco e verde seco. Umas lindezas! A coleção está cheia de novidades, mas continua com aquela característica marcante das minhas produções: o tom de garimpo que deixa a mesa superexclusiva.',
-        categoria_id: 4
+        descricao: 'Moro num país tropical. Sim, o Brasil é um país de uma beleza exuberante. Nós somos apaixonados por ele e nosso nome é a maior prova disso. A beleza da nossa terra inspirou a criação da linha Foliage.',
+        categoria_id: 15
         
     },
 
     {
-        nome: 'CONJUNTO C/ 6 SOUSPLAT WINDSOR Ø 34 CM',
-        preco:  709.66,
+        nome: 'APARELHO DE JANTAR 42 PEÇAS COUP PINEAPPLE GREEN',
+        preco:  1110.86,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 15,
+        descricao: 'Há quem diga que um abacaxi é sinônimo de problema. A Porto Brasil acredita no contrário: o abacaxi é sinônimo de hospitalidade. E existe coisa mais acolhedora que estar com que amamos? Linha Pineapple. Viva o momento.',
+        categoria_id: 15 
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS COUP PINEAPPLE NATURAL',
+        preco: 1110.86,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 30,
+        descricao: 'Há quem diga que um abacaxi é sinônimo de problema. A Porto Brasil acredita no contrário: o abacaxi é sinônimo de hospitalidade. E existe coisa mais acolhedora que estar com que amamos? Linha Pineapple. Viva o momento.',
+        categoria_id: 15
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS WINDSOR',
+        preco: 1017.06,
         marca: 'Porto Brasil Cerâmica',
         qtdeEmEstoque: 10,
         descricao: 'A Porto Brasil buscou inspiração no passado medieval para criar a linha Windsor. Com sua pintura desgastada e rústica, a linha Windsor transmite os ares da antiga monarquia, quando reis e rainhas viviam em castelos como o de Windsor que eram rústicos e transmitiam a sensação de força e proteção. Deixe a realeza fazer parte de sua mesa.',
-        categoria_id: 4 
+        categoria_id: 15
+        
     },
 
     {
-        nome: 'PRATO DE BOLO MARRAKECH PIMENTA-ROSA - PANELINHA Ø 31 CM - CONJUNTO C/ 6,',
-        preco: 821.76,
+        nome: 'APARELHO DE JANTAR 42 PEÇAS MADELEINE BRANCO',
+        preco:  1017.06,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 30,
+        descricao: 'O tempo passa rápido. Ficamos presos à rotina e à falta de tempo. Bordar é uma arte que exalta o contrário: a lentidão e a paciência. É um trabalho que deixa marcas. O tempo e o esforço do artesão ficam impressos para sempre. A magia de deixar uma marca para o amanhã é inspiradora e foi o motivo de criarmos a linha Madeleine.',
+        categoria_id: 15
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS ACANTHUS BRANCO',
+        preco: 1060.72,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 35,
+        descricao: 'Acanthus é o nome de uma folha muito utilizada pelos antigos arquitetos gregos como ornamentos de colunas e templos chamado capitel. Esses ornamentos foram e ainda são muito utilizados. Contudo, esse ícone se iniciou no período clássico na antiguidade na Grécia. A Porto Brasil criou mais uma linha que traz toda classe desse período.',
+        categoria_id: 15
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS ROMA BRANCO',
+        preco: 1089.02,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 27,
+        descricao: 'Essa linha tem como tema principal os relevos das colunas romanas, trazendo uma simetria agradável em suas formas. A linha Roma agrada desde o primeiro olhar e deixará sua mesa com um toque clássico no dia a dia.',
+        categoria_id: 15
+        
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS ATENAS BRANCO',
+        preco: 1133.36,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 30,
+        descricao: 'A Porto Brasil se inspirou nos ornamentos gregos para criação desta linha. Com uma borda suave, a linha Atenas transformará com perfeição a sua mesa tornando-a ainda mais bela.',
+        categoria_id: 15
+    },
+
+    {
+        nome: 'APARELHO DE JANTAR 42 PEÇAS MÔNACO BRANCO',
+        preco: 1055.99,
         marca: 'Porto Brasil Cerâmica',
         qtdeEmEstoque: 20,
-        descricao: 'Rita Lobo lança novas peças da Coleção Especiarias, do Acervo Panelinha. Depois do sucesso do lançamento da Coleção Especiarias, que chegou às lojas em abril deste ano, a chef Rita Lobo traz uma surpresa para o Natal: novos produtos do Acervo Panelinha, sua marca de louças, que agora já tem 23 peças. Tem mais duas cores, soluções para todos os perfis de público e um Especial de Natal estrelado pelas louças, com receitas deliciosas',
-        categoria_id: 4
+        descricao: 'Mônaco é uma das atrações turísticas mais luxuosas do mundo. Pequena em tamanho, mas enorme em cultura e história, essas terras ao Sul da França representam o quão extraordinárias podem ser as pequenas nações. A linha Mônaco reforça a ideia do quão extraordinária pode ficar a sua mesa usando peças elementares.',
+        categoria_id: 15
     },
 
     {
-        nome: 'SOUSPLAT RASO BARBECUE - 101 - CONJUNTO C/ 6',
-        preco: 421.76,
-        marca: 'Alleanza',
-        qtdeEmEstoque: 10,
-        descricao: 'Peças elaboradas em cerâmica Feldspática branca de alta resistência, com processo de decoração digital, sobre a base branca',
-        categoria_id: 4
-        
-    },
-
-    {
-        nome: 'SOUSPLAT ALLEANZA RENDA - CONJUNTO C/ 6',
-        preco:  421.76,
-        marca: 'Alleanza',
-        qtdeEmEstoque: 14,
-        descricao: 'Peças elaboradas em cerâmica Feldspática branca de alta resistência, com processo de decoração digital, sobre a base branca.',
-        categoria_id: 4 
-    },
-
-    {
-        nome: 'CONJUNTO DE 6 SOUSPLAT FREEDOM',
-        preco: 421.76,
-        marca: 'Alleanza',
+        nome: 'APARELHO DE JANTAR 42 PEÇAS COUP BRANCO',
+        preco: 1196.52,
+        marca: 'Porto Brasil Cerâmica',
         qtdeEmEstoque: 25,
-        descricao: 'Acredito que não teria melhor maneira em descrever a liberdade do que foi colocado nessa linha freedom da alleanza. Em uma cor super linda, onde é visto a liberdade em cada detalhe e a cada traço, pelos pássaros e gaiolas que foram colocados de forma delicada.',
-        categoria_id: 4
-    },
-
-    {
-        nome: 'SOUSPLAT 27CM PORCELANA Schmidt - MÁRMORE CINZA',
-        preco: 221.76,
-        marca: 'Le Creuset',
-        qtdeEmEstoque: 17,
-        descricao: 'A ousadia dos traços da pedra mármore e a tradição da cor cinza na porcelana. Cada sousplat possui 27cm de diâmetro, o que é o ideal para as principais refeições do dia.',
-        categoria_id: 4
+        descricao: 'A linha Coup é aquela linha que não pode faltar na mesa daqueles que não abrem mão do clássico. Com seu design simples e arrojado, as peças da linha Coup deixam sua mesa leve e suave.',
+        categoria_id: 15
         
     },
 
-    {
-        nome: 'SOUSPLAT 29CM RAMALHETE',
-        preco: 51.70,
-        marca: 'Alleanza',
-        qtdeEmEstoque: 60,
-        descricao: 'Peças elaboradas em cerâmica Feldspática branca de alta resistência, com processo de decoração digital, sobre a base branca.',
-        categoria_id: 4 
+    /*{
+        nome: 'APARELHO DE JANTAR 30 PEÇAS ROMA BRANCO',
+        preco: 867.56 ,
+        marca: 'Porto Brasil Cerâmica',
+        qtdeEmEstoque: 20,
+        descricao: 'Essa linha tem como tema principal os relevos das colunas romanas, trazendo uma simetria agradável em suas formas. A linha Roma agrada desde o primeiro olhar e deixará sua mesa com um toque clássico no dia a dia.',
+        categoria_id: 15
     },
 
     {
-        nome: 'SOUSPLAT CERÂMICA NATAL FATHER CHRISTMAS Ø28cm',
-        preco: 64.56,
-        marca: 'Alleanza',
+        nome: 'APARELHO DE JANTAR 30 PEÇAS ATENAS BRANCO',
+        preco: 884.56,
+        marca: 'Porto Brasil Cerâmica',
         qtdeEmEstoque: 30,
-        descricao: 'Peças elaboradas em cerâmica Feldspática branca de alta resistência, com processo de decoração digital, sobre a base branca.É recomendado utilizar sabão, detergente e uma esponja macia.',
-        categoria_id: 4
-    },
-
-    {
-        nome: 'SOUSPLAT ACQUA FISH 6 PEÇAS - ALLEANZA',
-        preco: 194.56,
-        marca: 'Alleanza',
-        qtdeEmEstoque: 25,
-        descricao: 'Produto fabricado de Cerâmica Feldspática branca de alta resistência, possui um processo de decoração digital e não libera substâncias tóxicas.',
-        categoria_id: 4
-        
-    },
-
-    {
-        nome: 'SOUSPLAT BEER NOVO CERÂMICA ACETINADO 28,5CM',
-        preco: 74.56 ,
-        marca: 'Wolff',
-        qtdeEmEstoque: 44,
-        descricao: 'A beleza desse item é daquelas que conferem bons sentimentos e significados ao ambiente. Crie em sua mesa a sua história.',
-        categoria_id: 4 
-    },
-
-    {
-        nome: 'SOUSPLAT CAPRI AZUL E BRANCO CERÂMICA 32,5CM',
-        preco: 66.52,
-        marca: 'Monte Sião',
-        qtdeEmEstoque: 40,
-        descricao: 'A beleza desse item é daquelas que conferem bons sentimentos e significados ao ambiente. Crie em sua mesa a sua história.',
-        categoria_id: 4
-    }
+        descricao: 'A Porto Brasil se inspirou nos ornamentos gregos para criação desta linha. Com uma borda suave, a linha Atenas transformará com perfeição a sua mesa tornando-a ainda mais bela.',
+        categoria_id: 15
+    }*/
 
 
 
@@ -160,6 +160,6 @@ console.log(alu);
 
 //buscaProdutos();
 
-buscaProdutosCompra();
+//buscaProdutosCompra();
 
-//criaVariosProdutos();
+criaVariosProdutos();
