@@ -99,10 +99,10 @@
                                     <div class="row">
                                         <div class="col"></div>
                                         <div class="col"></div>
-                                        <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
+                                        <div class="col text-center"><strong>Você pagará: <%=CompraSalva.total%></strong></div>
                                         <div class="col">
-                                          <form action="/checkout4" method="POST">
-                                             <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar</button>
+                                          <form action="/checkoutResPrevVenda" method="POST">          
+                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar</button>
                                           </form>
                                         </div>
                                     </div>

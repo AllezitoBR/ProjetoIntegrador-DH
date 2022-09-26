@@ -1,3 +1,4 @@
+const axios = require('axios')
 const {sequelize, Endereco, Compra, Usuario, endereco_usuario} = require('../database/models/index')
 //const {sequelize, Compra} = require('../database/models/index')
 const fs = require("fs");
@@ -6,9 +7,11 @@ const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 
 
+
 /* const EnderecoModels = require("../database/models/Endereco"); */
 
 const controllerCheckout = {
+
 
     checkoutRetirarCompra: (req, res) =>{
         //fazer o redirect
@@ -20,11 +23,17 @@ const controllerCheckout = {
         //let venda = req.body;
         res.redirect('/checkoutFormaPagamento')
     },
-    PreviewFinalVenda: (req, res) =>{
-        //fazer o redirect
-        //let venda = req.body;
-        res.redirect('/checkoutresPrevVenda')
-    },
+   
+ /*    listaCep: (req, res) =>{
+        const cep = req.params.cep
+        axios({
+            method: "get",
+            url: `https://brasilapi.com.br/api/cep/v2/${cep}`}).then(function (response) {
+            res.json(response.data)
+          }); 
+
+        res.render('./Checkout/checkoutRes');
+    }, */
 
     checkoutRes: (req, res) =>{
         res.render('./Checkout/checkoutRes');
@@ -51,10 +60,12 @@ const controllerCheckout = {
         if (compra) {
             req.session.compraSalva = compra;
             Usuario.findByPk(compra.usuarios_id).then( userCompra =>{    
-                req.session.compraUsuario = compra.usuarios_id;
+                req.session.compraUsuario = compra.usuarios_id;            
                 if (userCompra) {
+                    req.session.userCompraSession = userCompra;
                     Endereco.findByPk(compra.endereco_id).then( endrCompra =>{    
                     if (endrCompra){
+                        req.session.endrCompraSession = endrCompra;
                         return res.render('./checkout/checkoutCompra', {compra: compra, userCompra: userCompra, endrCompra: endrCompra})                       
                     }else{res.send('Endereço não encontrado')}                                          
                     })
@@ -129,7 +140,6 @@ const controllerCheckout = {
     AlterarEnd:(req, res) => {
         let  idEnd  = req.params;
         let { id } =req.session.compraSalva
-
         console.log(req.params.id )
         console.log(id)
         
@@ -139,13 +149,31 @@ const controllerCheckout = {
     },
 
 /* ******************* FINAL CONTROLERS ENDEREÇO *************************** */
-    checkoutRes2: (req, res) =>{
-        res.render('./Checkout/checkoutRes2');
-    },
+
+
+/* ******************* FORMA DE PAGAMEENTO *************************** */
     checkoutFormaPagamento: (req, res) =>{
-        res.render('./Checkout/checkoutFormaPagamento');
+        console.log(req.session.compraSalva)
+        res.render('./Checkout/checkoutFormaPagamento', {CompraSalva: req.session.compraSalva, 
+            UserCompraSessao: req.session.userCompraSession,
+            EndrCompraSessao: req.session.endrCompraSession  });
     },
+/* ******************* FINAL FORMA DE PAGAMEENTO *************************** */
+checkoutPreviewFinalVenda: (req, res) =>{
+        //fazer o redirect
+        //let venda = req.body;
+        console.log(req.session.userCompraSession)
+   /*      res.render('./Checkout/sucessoCheckout'); */
+       /*  res.render('./Checkout/checkoutFormaPagamento', {CompraSalva: req.session.compraSalva });  */
+       res.render('./Checkout/checkoutResPrevVenda', {CompraSalva: req.session.compraSalva,
+            UserCompraSessao: req.session.userCompraSession,
+            EndrCompraSessao: req.session.endrCompraSession  });
+    },
+
+/* ******************* FINAL checkoutresPrevVenda *************************** */
     checkoutResPrevVenda: (req, res) =>{
+        let { id } =req.session.compraSalva
+        console.log(req.params.id )
         res.render('./Checkout/checkoutResPrevVenda');
     },
     sucessoControler: (req, res) =>{

@@ -20,6 +20,7 @@ let validarEndereco = [
     body('estado').notEmpty().withMessage('Estado deve ter um valor').isLength({ max: 3 }).bail()
 ];
 
+/* router.get('/checkoutEnd/:cep', controllerCheckout.listaCep); */
 //rota compra 1
 router.get('/checkoutCompra/:id', controllerCheckout.checkoutCompraId);
 router.get('/checkoutCompra', controllerCheckout.checkoutCompra);
@@ -33,15 +34,13 @@ router.get('/AlterarEnd/:id', controllerCheckout.AlterarEnd); // alterar endere√
 
 
 router.get('/checkoutRetirarCompra', controllerCheckout.checkoutRetirarCompra);
-router.get('/checkoutRes2', controllerCheckout.checkoutRes2);
+/* router.get('/checkoutRes2', controllerCheckout.checkoutRes2); */
 
 router.get('/checkoutFormaPagamento', controllerCheckout.checkoutFormaPagamento);
 router.post('/checkoutFormaPagamento', controllerCheckout.FormaPagamento);
 
 router.get('/checkoutResPrevVenda', controllerCheckout.checkoutResPrevVenda);
-
-
-router.post('/checkout4', controllerCheckout.PreviewFinalVenda);
+router.post('/checkoutResPrevVenda', controllerCheckout.checkoutPreviewFinalVenda);
 
 router.get('/confirmarcompra', controllerCheckout.sucessoControler)
 router.post('/confirmarcompra', validarVEnda, controllerCheckout.salvarVenda)

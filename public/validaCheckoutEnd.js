@@ -1,4 +1,7 @@
- console.log('validaCheckoutEnd.js');
+
+
+
+console.log('validaCheckoutEnd.js');
  let campoRua = document.getElementById('rua');
  let campoNumero = document.getElementById('numero');
  let campoComplemento = document.getElementById('complemento');
@@ -27,9 +30,60 @@ campoComplemento.addEventListener('change', () => {
     console.log('campo campoNumero teve valor alterado');
     campoComplemento.style.color = 'green';
 })
+
 campoCep.addEventListener('change', () => {
     console.log('campo campoCep teve valor alterado');
     campoCep.style.color = 'green'
+    //sdasdasdsa
+    const carregaCotacoes = async () => {
+    // Tentando carregar cotações do localStorage
+    let cotacoes = localStorage.getItem("cotacoes");
+    // Se a cotacao existe
+    if(cotacoes != null){
+        // Transformando a string de cotações em um Obj Literal
+        cotacoes = JSON.parse(cotacoes);
+        // Se a cotacao é de hoje!
+    }
+    // Disparando a requisição para a api de cotações
+    console.log('https://brasilapi.com.br/api/cep/v2/'+campoCep.value);
+    let response = await fetch('https://brasilapi.com.br/api/cep/v2/'+campoCep.value);
+    // Interpretando a resposta como JSON
+    cotacoes = await response.json();
+    // Salvar cotacoes no localStorage
+    localStorage.setItem("cotacoes", JSON.stringify(cotacoes));
+    // Exibindo as cotações
+    mostraCotacoes(cotacoes);
+    // Debug...
+    console.log(cotacoes);
+}
+
+
+function mostraCotacoes(cep){
+    let conteudo = cep;
+    console.log(conteudo);
+   let inputRua = document.getElementById("rua")
+   inputRua.value = cep.street;
+   let inputBairro = document.getElementById("bairro")
+   inputBairro.value = cep.neighborhood;
+   let inputCidade = document.getElementById("cidade")
+   inputCidade.value = cep.city;
+   let inputEstado = document.getElementById("estado")
+   inputEstado.value = cep.state;
+
+}
+
+carregaCotacoes();
+
+
+
+
+
+
+
+
+
+
+///////dsadasdsadsa
 })
 campoBairro.addEventListener('change', () => {
     console.log('campo campoBairro teve valor alterado');
@@ -57,7 +111,6 @@ let formCadastroEnd = document.getElementById('formCadastroEnd')
 
 formCadastroEnd.addEventListener('submit', function(event){
     let erros = [];
-
     if (campoRua.value == "")  {
         erros.push('O campo Rua não pode estar vazio!');
     }
@@ -90,8 +143,8 @@ formCadastroEnd.addEventListener('submit', function(event){
     for (let i = 0; i < erros.length; i++){
         ulErros.innerHTML += "<li>"+erros[i]+"</li>"
     }
-
 });
+
 
 
 

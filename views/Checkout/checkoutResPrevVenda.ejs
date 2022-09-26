@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Resumo Compra</title>
+    <title>Checkout Finalizar Compra</title>
 </head>
 
 <body>
@@ -42,19 +42,20 @@
                             <div class="m-0">Detalhes da entrega</div>
                             <div>
                             <table class="table table-hover table-striped">
+
                                 <tbody>
                                   <tr>
                                     <th scope="row"><img src="../images/brcheck1.png" alt="bt localizacao end" >
                                     </th>
-                                    <td><h5>Jose Antônio Silva Santos</h5>
-                                       Rua Doutor Genésio Salles                                
-                                       - CEP 410000000 - Rio de Janeiro, RJ 
+                                    <td><h5><%=UserCompraSessao.nome%></h5>
+                                      Rua <%=EndrCompraSessao.rua%>                                  
+                                      - CEP <%=EndrCompraSessao.cep%>  - <%=EndrCompraSessao.cidade%>, <%=EndrCompraSessao.estado%> </td>
                                     </td>
                                     <td style="vertical-align: middle;">                                    
-                                        <a style="color: orange" href="/checkoutRetirarCompra">Editar ou escolher outro</a>
+                                        <a style="color: orange" href="/checkoutEnd/<%=CompraSalva.usuarios_id%>">Editar ou escolher outro</a>
                                     </td>                                    
                                   </tr>
-                                </tbody>
+                                </tbody> 
                             </table>
                             </div>
                             <div class="py-1  m-0">
@@ -126,7 +127,7 @@
                                 <div class="row">
                                     <div class="col"></div>
                                     <div class="col"></div>
-                                    <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
+                                    <div class="col text-center"><strong>Você pagará: <%=CompraSalva.total%></strong></div>
                                     <div class="col">
                                       <form action="/confirmarcompra" method="POST">
                                           <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">

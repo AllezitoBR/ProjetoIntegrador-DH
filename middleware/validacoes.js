@@ -1,5 +1,5 @@
 function validaCadastroServico(req,res,next){
-    const servico= req.body //{nome:"iago",valor:144}
+    const servico= req.body 
 
  
     console.log(servico)
