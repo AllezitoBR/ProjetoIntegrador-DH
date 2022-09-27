@@ -1,66 +1,91 @@
 const fs = require("fs");
-const usersJson = require('../users.json')
-const usersJsonComplete = require('../usersComplete.json')
-const bcrypt = require('bcrypt')
-const usuarioController = {
+const bcrypt = require('bcrypt');
+const {sequelize, Usuario} = require('../database/models/index');
 
-    cadastra: (req, res) => {
-        const usuario = req.body
-        const senhaCriptografada = bcrypt.hashSync(usuario.senha, 11)
-        console.log(senhaCriptografada)
-        usuario.senha = senhaCriptografada
-        usersJson.push(usuario)
-        fs.writeFile("users.json", JSON.stringify(usersJson, null, 4), err => {
-            
-            if (err) throw err;
-            console.log("Done writing"); 
-        });
-        return res.redirect('/users/cadastro2')
-    },
-
-    cadastraMeusDados: (req, res) => {
-        const usuario = req.body
-        console.log(usuario)
-        usersJsonComplete.push(usuario)
-        fs.writeFile("usersComplete.json", JSON.stringify(usersJsonComplete, null, 4), err => {
-            
-            if (err) throw err;
-            console.log("Done writing complete"); 
-        });
-        return res.redirect('/users/cadastro2')
-    },
+//const model = require('../models');
+//const Usuario = model.Usuario;
 
 
+module.exports = {
+    async criarUsuario(req, res) {
 
-    exibirCadastro: (req, res) => {
-        res.render('../views/Cadastro/cadastro3')
-    },
-
-    exibirCadastroSucesso: (req, res) => {
-        res.render('../views/Cadastro/cadastro2')
-    },
-
-
-
-    auth: (req, res) => {
-        const dadosUsuario = req.body
-        const user = usersJson.find((u) => u.email == dadosUsuario.email)
-        if (user) {
-            
-            let senhaValida = bcrypt.compareSync(dadosUsuario.senha, user.senha)
-            if (senhaValida) {
-                req.session.isAuth = dadosUsuario.email
+        try {
+            const {
+                nome,
+                cpf,
+                email,
+                senha,
+                rg,
+                genero,
+                dataNasc,
+                telefones
                 
-                //return res.redirect('/')
-            }
-        }
-          return res.redirect('/')
+            } = req.body;
 
-       // return res.send('Login ou senha errada')
+            
+            
+            const cryptSenha = await bcrypt.hash(senha, 8);
+              
+          
+            
+            const SalvarUsuario = await Usuario.create({
+                email,
+                senha: cryptSenha,
+                nome,
+                cpf,
+                rg,
+                genero,
+                dataNasc,
+                telefones,
+                
+            });
+            
+            return res.json({ SalvarUsuario });
+
+        } catch (err) {
+            return res.json({ msg: "Erro ao salvar Usuario " + err });
+        }
     },
 
-    meusDados: (req, res) => {
-        res.render('./Cadastro/meusDados')
-    }
+    async atualizaUsuario(req, res) {
+        try {
+          const { id } = req.params
+          const { nome, login } = req.body
+          const user = await Usuario.findOne({ where: { id } })
+          if (!user) {
+            return res.status(401).json({ message: "Nenhum usuario encontrado" })
+          } else {
+            const user = await Usuario.update({ nome, login }, { where: { id } })
+            return res.status(200).json({ user })
+          }
+        } catch (error) {
+          return res.status(400).json({ error })
+        }
+      },
+
+    async listaUsuarios(req, res) {
+        try {
+          const users = await Usuario.findAll()
+          if (!users) {
+           return res.status(401).json({ message: 'Não existe usuario cadastros' })
+          }
+          return res.status(200).json({ users })
+        } catch (error) {
+          return res.status(400).json({ error })
+        }
+      },
+
+    async deletarUsuario(req, res) {
+        const { id } = req.params
+        const user = await Usuario.findOne({ where: { id } })
+        
+        if (!user) {
+         return  res.status(401).json({ message: 'Usuario não encontrado' })
+        } else {
+          await Usuario.destroy({ where: { id } })
+          return res.status(200).json({ ok: true })
+        }
+      }
+
+       
 }
-module.exports = usuarioController

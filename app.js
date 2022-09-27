@@ -30,6 +30,9 @@ app.use(session({
   saveUninitialized:true,
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Middleware
 app.use((req, res, next) => {
   res.locals.Usuario = req.Usuario || null
@@ -38,8 +41,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.use(passport.initialize());
-app.use(passport.session())
+
 
 
 // view engine setup

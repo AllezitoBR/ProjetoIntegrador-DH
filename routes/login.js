@@ -10,9 +10,11 @@ const loggedUserMiddleware = require('../middlewares/loggedUserMiddleware');
 //const loggedUserDataMiddleware = require('../middlewares/loggedUserDataMiddleware');
 
 
-router.get('/', loginController.index); 
-router.post('/', loginController.auth); 
-router.get('/forget', loginController.forgetPass);
+router.get('/', (req, res) => {res.render('./Cadastro/cadastro3')},); 
+router.post('/', loginController.login); 
+router.get('/login/Sucesso', loginController.loginSuccess)
+router.get('/login/Fracasso', loginController.loginFailure);
+//router.get('/forget', loginController.forgetPass);
 //router.get('/logout', loginController.logout);
 
 

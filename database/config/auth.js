@@ -6,10 +6,12 @@ const LocalStrategy = require('passport-local');
 module.exports = function(passport) {
     passport.use(new LocalStrategy({ usernameField: "email", passwordField: "senha" }, (email, senha, done) => {
         Usuario.findOne({ where: { email: email } }).then((usuario) => {
+            console.log(usuario);
             if (!usuario) {
                 return done(null, false, { msg: "Usuario não encontrado!" });
             }
             const res = bcrypt.compare(senha, usuario.senha, (err, resposta) => {
+             console.log(res);               
                 if (resposta) {
                     return done(null, usuario);
                 } else {

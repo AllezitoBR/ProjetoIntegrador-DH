@@ -51,6 +51,13 @@ async function buscaUsuario(){
     console.log(al.toJSON())
 }
 
+async function buscaUser(){
+    const al = await Usuario.findOne({ where: { email: "fernando@gmail.com" } })
+    console.log(al);
+    }
+ 
+
 /*buscaUsuarios();*/
-buscaUsuario();
-//criaVariosUsuarios();
+//buscaUsuario();
+criaVariosUsuarios();
+//buscaUser();

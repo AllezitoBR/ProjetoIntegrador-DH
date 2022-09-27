@@ -6,11 +6,11 @@ module.exports = (sequelize, DataType) => {
         nome:DataType.STRING,
         cpf:DataType.INTEGER,
         rg:DataType.INTEGER,
-        sexo:DataType.STRING,
-        dataNascimento:DataType.DATE,
+        genero:DataType.STRING,
+        dataNasc:DataType.DATE,
         telefones:DataType.STRING
-
-                
+        
+        
     },{
         tablename:'usuarios',
         timestamps:false
@@ -19,7 +19,8 @@ module.exports = (sequelize, DataType) => {
     Usuario.associate = (models)=>{
         Usuario.hasMany(models.Endereco,{as:'usuario_endereco',foreignKey:'usuarios_id'})
     } 
-
-        
-    return Usuario
+    
+        return Usuario
 }
+
+

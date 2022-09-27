@@ -130,6 +130,15 @@ async function buscaProdutos(){
     console.log(al.map(a=>a.toJSON()));
 }
 
+async function buscaProdutosSpec(){
+    const produto = await Produto.findAll({ where: { categoria_id: 1 } });
+    if (produto === null) {
+      console.log('Not found!');
+    } else {
+      console.log(produto.map(a=>a.toJSON())); 
+    }
+}
+
 
 async function buscaProdutosCompra(){
     const al = await Produto.findByPk(1,{include:['produto_compra']});
@@ -162,4 +171,6 @@ console.log(alu);
 
 //buscaProdutosCompra();
 
-criaVariosProdutos();
+//criaVariosProdutos();
+
+buscaProdutosSpec();

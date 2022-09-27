@@ -7,6 +7,11 @@ async function buscaImagens(){
     console.log(al.map(a=>a.toJSON()));
 }
 
+async function buscaImagensSpec(){
+    const al = await Imagem.findAll({ where: { produto_id: 1 } });
+    console.log(al.map(a=>a.toJSON()));
+}
+
 
 async function criaVariasImagens(){
     const alu = await Imagem.bulkCreate([{
@@ -146,4 +151,5 @@ async function criaVariasImagens(){
 
 
 //buscaImagens();
-criaVariasImagens();
+//criaVariasImagens();
+buscaImagensSpec();
