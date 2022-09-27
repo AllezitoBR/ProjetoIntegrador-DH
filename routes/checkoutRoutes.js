@@ -2,12 +2,10 @@ var express = require('express');
 var router = express.Router();
 const controllerCheckout = require('../controllers/checkoutController');
 const {body, validationResult} = require('express-validator'); // importar validator
-/* const validaCadastroServico = require('../middleware/validacoes'); */
+const validaCadastro = require('../middleware/validacoes'); 
+const isAuthUser = require('../middleware/isAuthUser'); 
 
 
-let validarVEnda =[
-    // cirar a validação para a venda
-]; //array de validações
 let validarEndereco = [ 
 //validar cadastro de endereço
     
@@ -43,6 +41,9 @@ router.get('/checkoutResPrevVenda', controllerCheckout.checkoutResPrevVenda);
 router.post('/checkoutResPrevVenda', controllerCheckout.checkoutPreviewFinalVenda);
 
 router.get('/confirmarcompra', controllerCheckout.sucessoControler)
+let validarVEnda =[
+    // cirar a validação para a venda
+]; //array de validações
 router.post('/confirmarcompra', validarVEnda, controllerCheckout.salvarVenda)
 
 module.exports = router;
