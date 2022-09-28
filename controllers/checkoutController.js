@@ -11,8 +11,10 @@ const { body, validationResult } = require('express-validator');
 /* const EnderecoModels = require("../database/models/Endereco"); */
 
 const controllerCheckout = {
-
-
+  
+    checkoutCarrinhoId: (req, res) =>{
+        res.render('./Checkout/checkoutCarrinho');
+    },
     checkoutRetirarCompra: (req, res) =>{
         //fazer o redirect
         //let venda = req.body;
