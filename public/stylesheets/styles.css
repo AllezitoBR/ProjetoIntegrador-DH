@@ -431,7 +431,15 @@ footer li {
 
 /* Tailine responsive*/
 
-@media only screen and (max-width: 500px) {   
+@media only screen and (max-width: 500px) {
+    .slider-container{
+        width: 100%;
+        height: 150px;
+    }
+    
+    .slider-btn{
+        display: none;
+    }
 
     .about-sucess h2 {
         font-size: 2rem;
@@ -441,8 +449,7 @@ footer li {
         margin-top: 5px ;
         margin-bottom: 5px;
         margin-right: 0;
-        margin-left: 0;
-        
+        margin-left: 0;        
         height: 3.5rem          
         
     }
@@ -451,7 +458,8 @@ footer li {
         flex-direction: column;
         justify-content: space-around; 
         margin-top: 2px;
-        margin-left: 2px;   
+        margin-left: -10px;   
+        margin-right: 100px;
         
 
     }
@@ -465,26 +473,32 @@ footer li {
         height: 30rem;
         width: 100%;
         position: static;
-        margin-bottom: 10px;    
+        margin-bottom: 10px;
+        display: flex;
+        margin-right: 150px;    
         
 
     }
 
     .bestseller-section{        
-        margin-top: 10px ;
-        margin-bottom: 10px;
+        margin-top: 5px ;
+        margin-bottom: 5px;
         margin-right: 0;
-        margin-left: 0;
-        height: 3.5rem; 
-        text-align: center;
+        margin-left: 0;        
+        height: 3.5rem 
+       
     }
     
     .bestseller-section h2{
-        font-size: 2rem; 
+        font-size: 2rem;
+         
     }
 
     .product-images-1{
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        margin-right: 150px;
+        
         
 
     }
@@ -510,9 +524,17 @@ footer li {
 
     }
 
+    .rodape{
+       width: 100%;
+    }
+
+    
+
     .footer-container{
         display: flex;
         flex-direction: column;
+        margin-right: 200px;
+        
         
     }
 
@@ -556,15 +578,16 @@ footer li {
     }
 
     .icons-social{
-        height: 1rem;     
+        height: 1rem;  
         
         line-height: 1rem;
-       
+             
 
     }
 
     .footer-bottom{
         font-size: 1rem;
+        margin-right: 150px;
 
     }
     
