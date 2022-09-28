@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+  <link rel="stylesheet" href="/stylesheets/Login/forgetPass.css">
+</head>
+<body>
+    <main>
+        <div id="container-login">
+            <h1>Enviar nova senha</h1>
+            <form action="/users/login" method="post">
+                <label for="usuario">E-mail</label>
+                <input type="text" name="email" id="usuario" placeholder="Digite seu e-mail" autocomplete="off" required>
+                
+                
+                <input type="submit"  value="Enviar a solicitação">
+                
+            </form>
+        </div>
+    </main>
+  
+  <script src="/models/script.js"></script>
+</body>
+</html>

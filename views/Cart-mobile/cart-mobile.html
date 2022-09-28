@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="./cart-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart-Mobile</title>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container-header">
+
+                <img class="hamb" src="../images/hamburger.svg" alt="menu hamburguer">
+
+                <div class="search-box">
+                    <input type="text" class="search-text" placeholder="Pesquisar">
+                    <a class="search-button">
+                        <img class="loupe" src="../images/loupe.svg" alt="lupa">
+                    </a>
+                </div>
+
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-cart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg></a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg></a>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+        <section>
+            <div class="container">
+
+                <div class="left-side">
+
+                    <hr class="left-hr">
+
+                    <h2 class="left-title">Resumo do Pedido</h2>
+
+
+                    <div class="shop-product-list">
+
+                        <div class="shop-product">
+                            <div class="shop-product-description">
+                                <img class="black-plate" src="../images/image 12.png" alt="prato preto">
+                                <div class="prod-combo">
+                                    <h4 class="prod-description">Prato Thingx 50up775psb 50</h4>
+                                    <a href="#" class="prod-edit">Editar</a>
+                                </div>
+                            </div>
+                            <div class="price-qty">
+
+                                <div class="qty">
+                                    <div class="qty-qty">
+                                        <img class="minus" src="../images/minus-orange.svg" alt="sinal de menos">
+                                        <span class="qty-number">1</span>
+                                        <img class="plus" src="../images/plus-orange.svg" alt="sinal de mais">
+                                    </div>
+                                    <span class="prod-qty">100 disponíveis</span>
+                                </div>
+                                <div class="remove-combo">
+                                    <span class="price">R$6,99</span>
+                                    <a href="#" class="prod-remove">Remover</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="right-hr">
+
+                        <div class="shop-product">
+                            <div class="shop-product-description">
+                                <img class="black-plate" src="../images/image 12.png" alt="prato preto">
+                                <div class="prod-combo">
+                                    <h4 class="prod-description">Prato Thingx 50up775psb 50</h4>
+                                    <a href="#" class="prod-edit">Editar</a>
+                                </div>
+                            </div>
+                            <div class="price-qty">
+
+                                <div class="qty">
+                                    <div class="qty-qty">
+                                        <img class="minus" src="../images/minus-orange.svg" alt="sinal de menos">
+                                        <span class="qty-number">1</span>
+                                        <img class="plus" src="../images/plus-orange.svg" alt="sinal de mais">
+                                    </div>
+                                    <span class="prod-qty">90 disponíveis</span>
+                                </div>
+                                <div class="remove-combo">
+                                    <span class="price">R$6,99</span>
+                                    <a href="#" class="prod-remove">Remover</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+
+
+                <form class="delivery-choices">
+                    <div class="discount-place">
+                        <div class="discount-check">
+                            <input type="text" name="desconto" placeholder="Entre com o código"
+                                id="discount-check-place">
+                            <button class="discount-button" for="desconto">Aplicar</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <div class="final-datas">
+
+                    <div class="subtotal-text">
+                        <span>Subtotal</span>
+                        <span>R$13,98</span>
+                    </div>
+                    <div class="discount-text">
+                        <span>Desconto(OFF20)</span>
+                        <span>20%(R$2,79)</span>
+                    </div>
+                    <div class="discount-frete">
+                        <span>Frete</span>
+                        <span>R$5,00</span>
+                    </div>
+                    <div class="discount-total">
+                        <span>Total</span>
+                        <span>R$16,18</span>
+                    </div>
+                </div>
+
+                <div class="finaliza-compra">
+                    <a href="#" class="pgto-politica">Política de pagamento</a>
+                    <button class="finaliza">Finalizar a Compra</button>
+                    <a href="#" class="pgto-forma">Alterar forma de pagamento</a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

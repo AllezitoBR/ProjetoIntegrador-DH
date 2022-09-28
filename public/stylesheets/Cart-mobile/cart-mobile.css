@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,500&family=Ropa+Sans:ital@0;1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+
+    /* a cada 1 rem = 10px.*/
+    font-size: 62.5%;
+    
+}
+
+
+body {
+    font-family: "roboto";
+    font-size: 1.6rem;
+    max-width:545px;
+    max-height: 1005px;
+    width:100vw;
+    /*centralizar para apresentação*/
+    position: absolute;
+    top:53%;
+    left:50%;
+    transform:translate(-50%,-50%);
+        
+}
+
+
+
+/*HEADER*/
+
+.container-header{
+    display:flex;
+    justify-content: space-between;
+    padding: 1.5rem 3.3rem 0 3.3rem;
+
+}
+
+header nav {
+    background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);
+    height: 6rem;
+    width: 100%;
+    
+}
+
+.container-header a {
+    color: white;
+    font-weight: bold;
+    transition: all 250ms linear 0s;
+}
+
+.container-header a:hover {
+    color: black;
+}
+
+.search-box{
+    background: #F4F4F4;
+    width:28.1rem;
+    height: 2.8rem;
+    border-radius: 0.7rem;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-text{
+    background: none;
+    border:0;
+    outline: 0;
+
+}
+
+.container-header input::placeholder{
+    font-size: 1.6rem;
+}
+
+.loupe{
+    width:1.5rem;
+}
+
+.hamb{
+    color:#446633;
+    width:3.2rem;
+    height: 2.5rem;
+}
+
+.hamb:hover{
+    cursor:pointer;
+}
+
+
+
+.left-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #545353;
+    margin-top: 2.5rem;
+    margin-left: 3rem;
+}
+
+.left-hr {
+    height: 0.1rem;
+    width: 48rem;
+    border-width: 0;
+    color: #D9D9D9;
+    background-color: #D9D9D9;
+    margin-top: 11.8rem;
+    margin-bottom: 2.4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+    color: #ff8b2c;
+
+}
+
+.shop-header .measure {
+    display: flex;
+    width: 25rem;
+    justify-content: space-between;
+    color: #ff8b2c;
+}
+
+.black-plate {
+    width: 8.9rem;
+    height: 8.2rem;
+    margin-top: 3.4rem;
+    border: 0.1rem solid #D9D9D9;
+    padding: 1rem;
+    border-radius: 0.7rem;
+
+}
+
+.shop-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.shop-product-description {
+    display: flex;
+    
+}
+
+
+
+.prod-combo {
+    margin-top: 1.5rem;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.prod-description{
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #545353;
+}
+
+.prod-remove{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgba(84, 83, 83, 0.7);
+    cursor:pointer;
+    text-decoration-line: underline;
+}
+
+.prod-remove:hover{
+    background: red;
+    color:white;
+    width: fit-content;
+}
+
+.remove-combo{
+    display:flex;
+    flex-direction: column;
+    padding-right: 3rem;
+    gap:3.4rem;
+}
+
+.prod-edit{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgba(84, 83, 83, 0.7);
+    cursor:pointer;
+    text-decoration-line: underline;
+}
+
+.prod-edit:hover{
+    background: rgb(131, 129, 129);
+    color:white;
+    width: fit-content;
+}
+
+.price-qty {
+    display: flex;
+    width: 26.1rem;
+    height: 4.7rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.price {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #545353;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qty-qty{
+    display:flex;
+    justify-content: space-between;
+    gap:1rem;
+    align-items:center;
+    padding-top: 2rem;
+}
+
+
+
+.qty-number{
+    
+    font-size:1.6rem;
+    font-weight: 500;
+    color: #545353;
+    border: 0.1rem solid rgba(0, 0, 0, 0.25); 
+    border-radius: 3px;
+    text-align: center;
+    width:6rem;
+    height: 2.9rem;
+    padding: 0.4rem 2rem;
+
+
+}
+
+
+.right-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #545353;
+    padding-left: 6.2rem;
+    padding-right: 6.2rem;
+    padding-top: 62px;
+}
+
+.qty{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.prod-qty{
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgba(62, 62, 62, 0.8);
+}
+
+.qty-price {
+    display:flex;
+    justify-content: space-between;
+    padding-top:4rem;
+    padding-left:6.2rem;
+    padding-bottom: 2rem;
+}
+
+.right-hr {
+    height: 0.1rem;
+    width: 48rem;
+    border-width: 0;
+    color: #D9D9D9;
+    background-color: #D9D9D9;
+    padding-left: 7.3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.qty-price .item {
+    background-color: #FF4D00;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    color:white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: 'Roboto';
+    opacity:0.9;
+}
+
+.item-price {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-right: 6.2rem;
+}
+
+
+
+label {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.discount-place {
+    display:flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.discount-check{
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#discount-check-place {
+    width:36.7rem;
+    height:5.8rem;
+    background: #FFFFFF;
+    border: 0.1rem solid #D9D9D9;
+    border-radius: 0.4rem;
+    outline: 0;
+}
+
+.discount-button{
+    width:11.8rem;
+    height:5.8rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    background: rgb(204, 200, 198);
+    opacity: 0.9;
+    border: 0.1rem solid #D9D9D9;
+    border-radius: 0.4rem;
+    color: black;
+}
+
+.discount-button:hover{
+    background: orangered;
+    color: white;
+    cursor:pointer;
+}
+
+
+
+
+input::placeholder{
+font-weight: 400;
+font-size: 1.6rem;
+padding-left: 2rem;
+}
+
+.final-datas {
+    display:flex;
+    flex-direction: column;
+    gap:1.2rem;
+    
+}
+
+.subtotal-text {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: rgba(84, 83, 83, 0.7);
+    display:flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+
+
+.discount-text {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: rgba(84, 83, 83, 0.7);
+    display:flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.discount-frete {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: rgba(84, 83, 83, 0.7);
+    display:flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.discount-total {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #545353;
+    display:flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.finaliza-compra{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3.5rem;
+    margin-top: 2.9rem;
+    margin-bottom: 7.2rem;
+}
+
+.finaliza {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width:48.5rem;
+    height:6.1rem;
+    color: black;
+    border:none;
+    background: rgb(204, 200, 198);
+    opacity: 0.9;
+    border-radius: 0.4rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.finaliza:hover {
+    background: orangered;
+    cursor:pointer;
+    color: white;
+}
+
+.pgto-politica{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgba(62, 62, 62, 0.6);
+    text-decoration-line: underline;
+}
+
+.pgto-forma{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgba(62, 62, 62, 0.6);
+}
+
+.pgto-forma:hover{
+    background: rgba(62, 62, 62, 0.6);
+}
+

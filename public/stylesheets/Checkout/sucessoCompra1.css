@@ -1,0 +1,47 @@
+body{
+    padding-top: 66px;
+}
+
+
+.box-shadow{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5),
+                0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.container-fluid a:hover {
+    text-decoration: underline;
+}
+
+.carousel-caption {
+    color: black;
+}
+
+.modal-container{
+    background-color: rgba(242, 242, 242, 0.7);
+    width: 45.4rem;
+    height: 55rem ;
+    position:absolute;
+    top:3%;
+    left:35%;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 2rem 3rem;
+    text-align: center;
+    font-family: "roboto";
+    margin-top:10vh;
+    margin-bottom:10vh;
+
+}
+
+#btnVolta{
+    position:absolute;
+    top:33%;
+    left:45%;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 2rem 3rem;
+    text-align: center;
+    font-family: "roboto";
+    margin-top:10vh;
+    margin-bottom:10vh;
+}

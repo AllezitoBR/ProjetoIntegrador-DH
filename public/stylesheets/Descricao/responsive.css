@@ -1,0 +1,28 @@
+@media (min-height: 768px) {
+    .container-menu{
+        display: none;
+    }
+}
+
+@media (max-width: 940px){
+    html{
+        font-size:50%;
+    }
+
+    main .container-main div{
+        margin: auto;
+    }
+
+    
+    
+    
+}
+
+/*@media (min-height: 768px) {
+    .container-menu{
+        display: none;
+    }
+}*/
+
+
+

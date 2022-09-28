@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="/stylesheets/Login/login.css">
+   <!-- <link rel="stylesheet" href="./login/responsive.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+</head>
+
+<body>
+    <!-- Header -->
+	<%- include ('../partials/header')%>
+	<!-- /Header -->
+
+    <main>
+        <div id="container-login">
+            <h1>Login</h1>
+            <form action="/users/login" method="post">
+                <label for="usuario">E-mail</label>
+                <input type="text" name="email" id="usuario" placeholder="Digite seu e-mail" autocomplete="off" required>
+                <label for="senha">Senha</label>
+                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                <a href="/forget" id="forgot-pass">Esqueceu a senha?</a>
+                <input type="submit"  value="Entrar">
+                <div id="new-user">
+                    <a href="/users/cadastro">Não tem uma conta? Criar uma nova conta</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- fim main  -->
+
+<!-- footer -->
+<%- include('../partials/footer')%>
+<!-- /footer --> 
+
+</body>
+
+</html>

@@ -1,0 +1,573 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "roboto";
+}
+
+html {
+
+    /* a cada 1 rem = 10px.*/
+    font-size: 62.5%;
+}
+
+
+body {
+    font-family: "roboto";
+    font-size: 1.6rem;
+    display:block;
+
+}
+
+.menu {
+    max-width: 100%;
+    height: 6.5rem;
+    background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);
+    font-family: 'roboto';
+    
+}
+
+.menu img {
+    float: left;
+    height: 4rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 8rem;
+
+}
+#logotipo {
+    float: left;
+    height: 4rem;
+    margin-top: -2rem;
+    margin-left: 2rem;
+    margin-right: 8rem;
+
+}
+
+#logoid {
+    background-color: transparent;
+}
+
+.menu ul {
+    list-style: none;
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    width: 16rem;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li svg {
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 1.9rem;
+    left: 0;
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.menu ul ul {
+    padding: 1.5rem;
+    position: absolute;
+    visibility: hidden;
+    list-style-type: none;
+    padding-left: 5rem;
+    z-index: 3;
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+}
+
+.menu a:hover {
+    background-color: rgb(223, 63, 5);
+    height: 6.5rem;
+    z-index: 3;
+}
+
+.menu ul ul li {
+    float: none;
+    padding-bottom: 2.5rem;
+    background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 100%, rgba(255, 119, 41, 0.9) 100%, rgba(255, 146, 40, 10) 100%);
+    margin-left: -5rem;
+    z-index: 3;
+}
+
+.menu ul ul li a {
+    text-align: center;
+    margin-top: -1.5rem;
+    margin-left: 0;
+    z-index: 3;
+}
+
+.menu ul ul li a:hover {
+    background-color: rgb(223, 63, 5);
+    border-radius: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    text-align: center;
+    z-index: 3;
+}
+
+#ps{
+    font-size: 1.45rem;
+}
+
+
+.menu li a svg {
+    margin-top: -3px;
+}
+
+
+
+
+/*Carrossel*/
+
+.slider-container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.slider{
+    display: flex;
+    width: 300%;
+    margin-left: -100%;
+    
+}
+
+
+.slider-section{
+    width: 100%;
+    
+}
+
+
+.slider-img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider-btn{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255,255,255,0.7);
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 600;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor:pointer;
+
+}
+
+.slider-btn:hover{
+    background: #fff;
+}
+
+.slider-btn-next{
+    right:10px;
+}
+
+.slider-btn-prev{
+    left:10px;
+}
+
+/*Fim Carrossel*/
+
+
+.about-sucess {
+    
+    background: linear-gradient(90deg, rgba(255, 92, 0, 50) 4.06%, rgba(255, 119, 41, 50) 57.09%, rgba(255, 146, 45, 50) 100%);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    height: 7.3rem;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    z-index: 2;
+    
+}
+
+
+.about-sucess h2 {
+    padding: 0.8rem 0 0 3rem;
+    color: white;
+    font-family: "roboto";
+    font-weight: bold;
+    font-size: 3rem;
+    
+}
+
+
+.bestseller-section {
+    background: linear-gradient(90deg, rgba(255, 92, 0, 50) 4.06%, rgba(255, 119, 41, 50) 57.09%, rgba(255, 146, 45, 50) 100%);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 7.3rem;
+    border-radius: 1rem 1rem 0 0;
+    position: relative;
+}
+
+.bestseller-section h2 {
+    padding: 1.5rem 0 0 3rem;
+    color: white ;
+    font-family: "roboto";
+    font-weight: bold;
+    font-size: 3rem;
+    
+}
+
+
+
+.product-images {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    
+}
+
+.product-image{
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    padding:2.4rem;
+}
+
+
+.product-images-1-m{
+    display:flex;
+    margin-bottom: -2rem;
+    justify-content:space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.product-image-m1{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: -3rem;
+    position:relative;
+    width:44rem;
+    height: 68rem;
+    object-fit: cover;
+    padding:1rem;
+}
+
+.product-image-title1{
+    display:flex;
+    color: black;
+    font-weight: bold;
+    border-radius: 0 0 3rem 3rem;
+    background-color: #fd5e01;
+    width:42rem;
+    height: 5rem;
+    justify-content: center;
+    z-index: 25;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.product-images-1{
+    display:flex;
+    gap:5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    
+}
+
+.product-images-1, h2, p, span {
+    margin-left: 10px;
+}
+
+span {
+    padding-bottom: 10px;
+}
+
+.product-image-title{
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.product-image-descript{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.product-image-price{
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+
+
+.bestseller-section{
+
+    margin-top: 9rem;
+}
+
+
+
+
+/*FOOTER*/
+footer {
+    background-color: #D9D9D9;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 20px 20px 0 0;
+    margin-top: 10px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-family: "roboto";
+}
+
+footer a {
+    text-decoration: none;
+
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    list-style: none;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
+
+.footer-container img {
+    height: 40px;
+}
+
+.footer-payments h2 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.footer-list li a {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    display: block;
+    line-height: 1.5rem;
+    color: black;
+}
+
+.footer-cards {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    line-height: 5rem;
+}
+
+.footer-cards img {
+    height: 3rem;
+    padding-left: 2rem;
+}
+
+.footer-customer {
+    margin-right: 3rem;
+}
+
+.footer-social {
+    margin-top: 3rem;
+    
+}
+
+.icons-social {
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+    line-height: 5rem;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 0.2rem solid #FF8038;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#logodh{
+    width:20rem;
+    height: 5rem;
+}
+
+
+
+
+/* Tailine responsive*/
+
+@media only screen and (max-width: 500px) {   
+
+    .about-sucess h2 {
+        font-size: 2rem;
+
+    }    
+    .about-sucess{
+        margin-top: 5px ;
+        margin-bottom: 5px;
+        margin-right: 0;
+        margin-left: 0;
+        
+        height: 3.5rem          
+        
+    }
+    .product-images-1-m{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+        margin-top: 2px;
+        margin-left: 2px;   
+        
+
+    }
+
+    .product-images-m{
+        display: grid ;
+
+    }
+
+    .product-image-m1{        
+        height: 30rem;
+        width: 100%;
+        position: static;
+        margin-bottom: 10px;    
+        
+
+    }
+
+    .bestseller-section{        
+        margin-top: 10px ;
+        margin-bottom: 10px;
+        margin-right: 0;
+        margin-left: 0;
+        height: 3.5rem; 
+        text-align: center;
+    }
+    
+    .bestseller-section h2{
+        font-size: 2rem; 
+    }
+
+    .product-images-1{
+        display: grid;
+        
+
+    }
+
+    .product-images{
+        display: flex;
+        flex-direction: column;
+        align-items: center;         
+        justify-content: space-around;
+
+    }
+
+    .product-image{
+        width: 15rem;
+        height: 15rem;        
+        padding:1rem;
+    }
+
+    .product-image-title{
+        font-weight: 700;
+        font-size: 1.2rem;
+
+
+    }
+
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #logodh{
+        width:10rem;
+        height: 2.5rem;
+    }
+
+    .footer-list li a {  
+    line-height: 0.5rem;
+    }
+    
+    .footer-payments h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-cards {
+        flex-direction: row;
+        display: flex;
+       flex-wrap: wrap;
+        margin-top: 1rem;
+        line-height: 5rem;
+    }
+
+    .footer-cards img {
+        height: 2rem;
+        
+    }
+
+    .footer-customer{
+        font-size:  1.5rem ;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    .footer-social h2{
+        font-size:  1.5rem ;       
+
+    }
+
+    .icons-social{
+        height: 1rem;     
+        
+        line-height: 1rem;
+       
+
+    }
+
+    .footer-bottom{
+        font-size: 1rem;
+
+    }
+    
+}
+
+

@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Victor Miyazaki",
+        "email": "victor@gmail.com",
+        "senha": "$2b$11$zD6qiUC8pnU2ed9yJ2BS0O4Ft3Z/2IY1b1Dvvye1YpGvlT3A7SIge"
+    },
+    {
+        "nome": "marcelo matos",
+        "email": "marcio.simetria@gmail.com",
+        "senha": "$2b$11$KNF6hauwUNZerBeVHP9.O.z7vCUZk/DOtYYjaBS25VLKqp1647vUW"
+    },
+    {
+        "nome": "caroline ferreira",
+        "email": "caroline@gmail.com",
+        "senha": "$2b$11$mE/qdSzMFZc5MwN3mH62H.7oq8W1DVauyUK9Q4TPvY.wLT5biiTBi"
+    },
+    {
+        "nome": "Akane Hirose",
+        "email": "akane@gmail.com",
+        "senha": "$2b$11$5beeJpN/wkgMO3d5NQttIOMJ4DAEyy30tUN5wRsF0QxFL8kAEPEYK"
+    }
+]
