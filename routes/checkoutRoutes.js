@@ -19,7 +19,7 @@ let validarEndereco = [
 ];
 
 /* router.get('/checkoutEnd/:cep', controllerCheckout.listaCep); */
-router.get('/checkoutCarrinho/:id', controllerCheckout.checkoutCarrinhoId);
+router.get('/checkoutCarrinho/', controllerCheckout.checkoutCarrinhoId);
 //rota compra 1
 router.get('/checkoutCompra/:id', controllerCheckout.checkoutCompraId);
 router.get('/checkoutCompra', controllerCheckout.checkoutCompra);
