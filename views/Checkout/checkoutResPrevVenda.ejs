@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../stylesheets/Checkout/stylesCheckoutResp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Resumo Compra</title>
+    <title>Checkout Finalizar Compra</title>
 </head>
 
 <body>
@@ -18,10 +19,10 @@
         <div class="menu-topo">
             <img src="../images/logo.jpeg" alt="logo d-house">
         </div>
-    </header> -->
-    
+    </header> 
+    <%- include('./partials/headerCkeckout.ejs') %>!-->
     <nav class="navbar navbar-expand-md navbar-light fixed-top box-shadow" style="background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="#">
           <img src="../images/logo.jpeg" alt="logo d-house"  height="40"  >
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -41,19 +42,20 @@
                             <div class="m-0">Detalhes da entrega</div>
                             <div>
                             <table class="table table-hover table-striped">
+
                                 <tbody>
                                   <tr>
                                     <th scope="row"><img src="../images/brcheck1.png" alt="bt localizacao end" >
                                     </th>
-                                    <td><h5>Jose Antônio Silva Santos</h5>
-                                       Rua Doutor Genésio Salles                                
-                                       - CEP 410000000 - Rio de Janeiro, RJ 
+                                    <td><h5><%=UserCompraSessao.nome%></h5>
+                                      Rua <%=EndrCompraSessao.rua%>                                  
+                                      - CEP <%=EndrCompraSessao.cep%>  - <%=EndrCompraSessao.cidade%>, <%=EndrCompraSessao.estado%> </td>
                                     </td>
                                     <td style="vertical-align: middle;">                                    
-                                        <a style="color: orange" href="/checkout/checkoutRes">Editar ou escolher outro</a>
+                                        <a style="color: orange" href="/checkoutEnd/<%=CompraSalva.usuarios_id%>">Editar ou escolher outro</a>
                                     </td>                                    
                                   </tr>
-                                </tbody>
+                                </tbody> 
                             </table>
                             </div>
                             <div class="py-1  m-0">
@@ -71,7 +73,7 @@
                                                 <p class="text-left" style="color:green">Aprovação imediata</p>
                                               </td>
                                               <th class="col-2" style="vertical-align: middle;">
-                                                <a style="color: orange" href="/checkoutRes2">Alterar</a></td>      
+                                                <a style="color: orange" href="/checkoutFormaPagamento">Alterar</a></td>      
                                               </th>
                                             </tr>                                 
                                         </tbody>
@@ -125,9 +127,9 @@
                                 <div class="row">
                                     <div class="col"></div>
                                     <div class="col"></div>
-                                    <div class="col text-center"><strong>Você pagará: 339,00</strong></div>
+                                    <div class="col text-center"><strong>Você pagará: <%=CompraSalva.total%></strong></div>
                                     <div class="col">
-                                      <form action="/checkout/sucessoCompra1" method="GET">
+                                      <form action="/checkout/confirmarcompra" method="GET">
                                           <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">
                                             Confirmar a compra
                                           </button>
@@ -207,7 +209,7 @@
         <p class="mb-0 font-weight-light">Pituba - Salvador-BA</p> 
     </footer>
 
-  
+  <!--  <%- include('./partials/footerCheckout.ejs') %>-->
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

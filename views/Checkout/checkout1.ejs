@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="/stylesheets/Checkout/stylesCheckout1.css">
+    <link rel="stylesheet" href="../stylesheets/Checkout/stylesCheckout1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
@@ -13,13 +13,17 @@
 </head>
 
 <body>
-    
-    <%- include('../partials/headerCheckout') %>
+   <!-- <header>
+        <div class="menu-topo">
+            <img src="../images/logo.jpeg" alt="logo d-house">
+        </div>
+    </header> !-->
+    <%- include('./partials/headerCkeckout.ejs') %>
 
     <main>
         <div class="main-link-voltar">
             <p><a href="../">
-                     Carrinho</a>
+                    < Carrinho</a>
             </p>
         </div>
         <div class="main-container">
@@ -164,9 +168,10 @@
                 <p>D'HOUSE COMÉRCIO VAREJISTA S.A<br>CNPJ: 99.999.999/0001-99<br>Endereço: Av. Wireframe DH,
                     999<br>Bairro - Cidade</p>
             </div>
+
         </div>
     </footer> -->
-    <%- include('../partials/footerCheckout.ejs') %>
+    <%- include('./partials/footerCheckout.ejs') %>
 </body>
 
 </html>

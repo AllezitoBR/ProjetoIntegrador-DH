@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var bcrypt = require('bcrypt');
+var methodOverride = require('method-override'); // poder trabalhar com o p put e delete no express
 const passport = require('passport');
 require('./database/config/auth')(passport);
 
@@ -17,18 +18,27 @@ var apiRouter = require('./routes/apiRoute');
 var cadastroRouter = require('./routes/cadastro');
 const usuarioRouter = require('./routes/usuario');
 var descriptionRouter = require("./routes/descriptionRoute");
-var checkoutRouter = require('./routes/checkout');
+var checkoutRouter = require('./routes/checkoutRoutes');
 
 
 
 
 var app = express();
 
+
+
+
 app.use(session({
+  secret: 'frase secreta projeto integrador',
+  resave: true,
+  saveUninitialized: true
+}));
+
+/*app.use(session({
   secret:"stick to your guns",
   resave: true,
   saveUninitialized:true,
-}));
+}));*/
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -55,7 +65,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
-
+app.use(methodOverride('_method'));
 
 
 app.use('/', indexRouter);
@@ -68,8 +78,9 @@ app.use('/logout', loginRouter);
 app.use('/', cadastroRouter);
 app.use('/users',usuarioRouter );
 app.use('/', loginRouter);
-/*app.use("/description", descriptionRouter);*/
 app.use('/checkout', checkoutRouter);
+/*app.use("/description", descriptionRouter);*/
+//app.use('/checkout', checkoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

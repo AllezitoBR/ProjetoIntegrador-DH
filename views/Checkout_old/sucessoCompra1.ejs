@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/Checkout/sucessoCompra1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso Compra</title>
+</head>
+
+<body>
+       
+    <nav class="navbar navbar-expand-md navbar-light fixed-top box-shadow" style="background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);">
+        <a class="navbar-brand" href="/">
+          <img src="../images/logo.jpeg" alt="logo d-house"  height="40"  >
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" 
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    </nav>
+
+
+
+<div class="modal-container">
+    
+        <h1 class="subtitulo">Compra efetuada com Sucesso</h1>
+    
+</div>
+
+<p>
+    <a href="/" id="btnVolta" style="background-color:#FF4500" class="btn btn-lg btn-danger">Voltar à Página Principal</a>
+</p>
+
+<!--<script>
+	
+    function iniciaModal(modalID) {
+        if(localStorage.fechaModal !== modalID) {
+            const modal = document.getElementById(modalID);
+            if(modal) {
+                modal.classList.add('mostrar');
+                modal.addEventListener('click', (e) => {
+                    if(e.target.id == modalID || e.target.className == 'fechar') {
+                        modal.classList.remove('mostrar');
+                        localStorage.fechaModal = modalID;
+                    }
+                });
+            }
+        }
+    }
+
+    const logo = document.querySelector('.contato .button');
+    logo.addEventListener('click', () => iniciaModal('modal-promocao'));
+
+    document.addEventListener('scroll', () => {
+        if(window.pageYOffset > 800) {
+            iniciaModal('modal-promocao')
+        }
+    })
+
+</script>-->
+
+
+
+
+
+
+
+</body>
+</html>

@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         data: DataTypes.DATE,
         pago:DataTypes.TINYINT(1),
         enderecoEntrega:DataTypes.STRING,
-        usuarios_id:DataTypes.INTEGER
+        usuarios_id:DataTypes.INTEGER,
+        endereco_id:DataTypes.INTEGER
         
     },
         {

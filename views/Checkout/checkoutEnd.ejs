@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="../stylesheets/Checkout/stylesCheckoutResp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <title>Checkout Alterar Endereço</title>
+    
+</head>
+
+<body>
+<!-- <header>
+        <div class="menu-topo">
+            <img src="../images/logo.jpeg" alt="logo d-house">
+        </div>
+    </header> 
+    <%- include('./partials/headerCkeckout.ejs') %>!-->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top box-shadow" style="background: linear-gradient(90deg, rgba(255, 92, 0, 0.9) 4.06%, rgba(255, 119, 41, 0.9) 57.09%, rgba(255, 146, 45, 0.9) 100%);">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo.jpeg" alt="logo d-house" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <main>
+        <section class="container-fluid pb-5">     
+            
+            <a href="/checkoutUdpEndereco">< Carrinho</a> 
+            <div class="row">       
+                <div class="col-lg-12 bg-light">
+                    <div class="border border-light">
+                        <div class="py-3"><h5>Deseja adicionar endereço?</h5></div>
+                        <%{%> 
+                            <h5>Sr(a): <%=users.nome%>
+                            </h5>
+                        
+                        <div class="m-2">Endereço</div>     
+                        <div>
+                            <div id="ulerrors" class="errors">
+                                <ul>
+                                    <!-- aqui vao os erros -->
+
+                                </ul>
+                            </div>
+                            <form id="formCadastroEnd" action="/checkoutEnd" method="post"> 
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <input type="text" id="cep" name="cep" placeholder="Cep" class="form-control">                                            
+                                        </div>
+                                        <div class="col-10">
+                                            <input type="text" id="rua" name="rua" placeholder="Rua" class="form-control">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+          
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" id="cidade"  name="cidade" placeholder="Cidade" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" id="estado" name="estado" placeholder="Estado" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <input type="hidden" id="usuario" name="usuarios_id" value="<%=users.id%>" class="form-control">
+                                        </div>
+
+                                    </div>                
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" id="numero" name="numero" placeholder="Numero" class="form-control">
+            <!--                                 <% if (locals.errors && erros.name) { %>
+                                                <p class="feedback"><%= errors.name %></p>
+                                            <% } %> -->
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" id="complemento" name="complemento" placeholder="Complemento" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                           
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                           <!--              <div class="col">
+                                            <input type="text" id="cep" name="cep" placeholder="Cep" class="form-control">                                            
+                                        </div> -->
+                                    </div>                  
+                                </div>
+                                <div class="mb-3">                                                           
+                                    <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Cadastrar</button>                            
+                                </div>  
+                            </form> 
+                                <div class="mb-6">
+                                    <div class="row">
+                                        <div class="col">                                                                                           
+                                        </div>
+                                        <div class="col">
+                                            
+                                           <!--  <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Atualizar</button> -->
+                                            <input type="hidden" id="usuario" name="usuarios_id" value="<%=users.id%>" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <!-- <form id="formCadastro" action="/checkoutEnd/<%{%> <%=ends.id%><% }%>"  method="delete"> 
+                                                <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Excluir</button>
+                                            </form> -->
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                    </div> 
+                                </div>
+                                
+                            
+                        </div>
+                        <% }%> 
+                        <div><h5>Endereços</h5></div>   
+                        <div class="form-group">
+                           <!--  <form action="/AlterarEnd?_method=PUT" method="POST"> -->
+                                <div>
+                                <%ends.forEach(a=>{%>      
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <h5>Rua: <%=a.rua%>
+                                            </h5>
+                                            <p>n.º: <%=a.numero%>, <%=a.complemento%>, <%=a.bairro%>
+                                                            <%=a.cidade%>-<%=a.estado%> <%=a.id%>
+                                            </p>
+                                            <form action="/deletarEnd/<%= a.id%>?_method_DELETE"  method="post"> 
+                                                <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;">Apagar Endereço</button>
+                                            </form>
+                                        </td>
+                                    
+                                        <td>                                                                                                        
+                                            <form action="/checkout/AlterarEnd/<%=a.id%>" method="GET"> 
+                                                <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >Continuar Compra</button>  
+                                            </form>                                                                                  
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <td>                                        
+                                        </td>
+                                        <!-- <td><%=a.rua%></td>
+                                        <td><%=a.numero%></td>
+                                        <td><%=a.complemento%></td>
+                                        <td class="text-center" style="color:green"><%=a.bairro%></td> -->
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <% }) %> 
+                                </div> 
+                         <!--    </form>  ************ -->                                                     
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col"></div>
+                                    <div class="col text-center"><strong></strong></div>
+                                    <div class="col">
+             <!--                            <form action="/checkoutCompra/1" method="GET">
+                                            <button type="submit" class="btn btn-warning btn-block p-2" style="max-width: 200px;" >ATUALIAR COMPRA</button>
+                                        </form> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>  
+        </section>  
+     
+    </main>
+
+    <footer class="bg-light text-center py-3">
+    <p class="mb-0 font-weight-bold">© 2022 D'house Comércio Varejista S.A</p>
+    <p class="mb-0 font-weight-light">CNPJ: 99.999.999/0001-99</p>
+    <p class="mb-0 font-weight-light">Endereço: Av. Wireframe DH, 999</p>
+    <p class="mb-0 font-weight-light">Pituba - Salvador-BA</p>
+    </footer>
+<!--     <script src="/src/requests/default.js"></script> -->
+<!--  <%- include('./partials/footerCheckout.ejs') %>-->
+
+<script type="text/javascript" src="/validaCheckoutEnd.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+<!-- <script type="text/javascript">    
+    alert('cliquei');    
+</script>  -->
+</body> 
+<!-- 
+ -->
+
+</html>

@@ -8,5 +8,5 @@ const usuarioController = require('../controllers/usuarioController')
 //router.post('/login', usuarioController.auth)
 router.get('/meusdados', (req, res) => {res.render('./Cadastro/meusDados')})
 router.post('/meusdados', usuarioController.criarUsuario)
-
+router.get('/sucesso', (req, res) => {res.render('./Cadastro/cadastro2')},);
 module.exports = router

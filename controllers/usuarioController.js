@@ -16,12 +16,12 @@ module.exports = {
                 email,
                 senha,
                 rg,
-                genero,
-                dataNasc,
+                sexo,
+                dataNascimento,
                 telefones
                 
             } = req.body;
-
+            
             
             
             const cryptSenha = await bcrypt.hash(senha, 8);
@@ -30,18 +30,20 @@ module.exports = {
             
             const SalvarUsuario = await Usuario.create({
                 email,
-                senha: cryptSenha,
+                senha:cryptSenha,
                 nome,
                 cpf,
                 rg,
-                genero,
-                dataNasc,
+                sexo,
+                dataNascimento,
                 telefones,
                 
             });
+            //SalvarUsuario.senha_hash = undefined;
+            //return res.json({ SalvarUsuario });
+            return res.redirect('/users/sucesso');
             
-            return res.json({ SalvarUsuario });
-
+            
         } catch (err) {
             return res.json({ msg: "Erro ao salvar Usuario " + err });
         }

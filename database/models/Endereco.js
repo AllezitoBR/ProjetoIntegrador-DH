@@ -24,4 +24,23 @@ module.exports = (sequelize, DataTypes) => {
 
         
     return Endereco
-}
+} 
+
+
+/*         Endereco.associate = (models)=>{
+            Endereco.hasMany(models.Usuario,{
+                as:'endereco_usuario',
+                foreignKey:'usuarios_id'
+        })   
+        } */
+
+/*         Categoria.associate = (models)=>{
+
+            Categoria.hasMany(models.Produto,{
+                as:'categoria_produto',
+                foreignKey:'categoria_id'
+    
+            })
+    
+        } */
+    

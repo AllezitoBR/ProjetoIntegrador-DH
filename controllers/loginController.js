@@ -9,11 +9,12 @@ module.exports = {
         })(req, res, next);
     },
     async loginSuccess(req, res) {
+        //return res.redirect('/login/sucesso');
         return res.send('Usuario logado com sucesso!');
     },
 
     async loginFailure(req, res) {
-        return res.send('Não foi possivel logar: Credenciais incorretas! ');
+       return res.send('Não foi possivel logar: Credenciais incorretas! ');
     },
 
 }
